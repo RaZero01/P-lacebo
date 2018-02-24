@@ -1,0 +1,22 @@
+{
+  "name": "p-lacebo",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Konstantin <Korazinkov@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize.css": "*",
+    "jquery": "2.*"
+  }
+}
