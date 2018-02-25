@@ -8,3 +8,4 @@
  * Custom
  */
 //= partials/bootstrap.min.js
+//= partials/jquery.min.js
