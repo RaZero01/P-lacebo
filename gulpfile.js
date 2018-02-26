@@ -205,7 +205,7 @@ gulp.task('create-new-tag', function (cb) {
 });
 
 gulp.task('create-commit', function (cb) {
-    gulp.src('package.json')
+    return gulp.src('package.json')
         .pipe(git.add())
         .pipe(prompt.prompt({
             type: 'input',
