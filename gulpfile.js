@@ -7,7 +7,6 @@ var gulp = require('gulp'),
     rigger = require('gulp-rigger'),
     cssmin = require('gulp-minify-css'),
     imagemin = require('gulp-imagemin'),
-    pngquant = require('imagemin-pngquant'),
     rimraf = require('rimraf'),
     browserSync = require('browser-sync'),
     concat = require('gulp-concat'),
@@ -21,6 +20,9 @@ var gulp = require('gulp'),
     gutil = require('gulp-util'),
     git = require('gulp-git'),
     credentials = require('./credentials.json'),
+    cache = require('gulp-cache'),
+    size = require('gulp-size'),
+    changed = require('gulp-changed'),
     fs = require('fs');
 
 require('gulp-task-list')(gulp, ['html:build', 'css:build', 'css:build', 'image:build', 'fonts:build', 'js:build',
@@ -39,14 +41,14 @@ var path = {
         html: 'src/*.html',
         js: 'src/js/**/*.js',
         css: 'src/css/**/*.css',
-        img: 'src/img/**/*',
+        img: 'src/img/**/*.*',
         fonts: 'src/fonts/**/*.*'
     },
     watch: {
         html: 'src/**/*.html',
         js: 'src/js/**/*.js',
         css: 'src/css/**/*.css',
-        img: 'src/img/**/*',
+        img: 'src/img/**/*.*',
         fonts: 'src/fonts/**/*.*'
     },
     clean: './build'
@@ -111,13 +113,19 @@ gulp.task('css:build', function () {
 
 gulp.task('image:build', function () {
     gulp.src(path.src.img)
-        .pipe(imagemin({
-            progressive: true,
-            svgoPlugins: [{removeViewBox: false}],
-            use: [pngquant()],
-            interlaced: true
-        }))
+        .pipe(changed(path.build.img))
+        .pipe(imagemin([
+            imagemin.gifsicle({interlaced: true}),
+            imagemin.jpegtran({progressive: true}),
+            imagemin.optipng({optimizationLevel: 5}),
+            imagemin.svgo({
+                plugins: [
+                    {removeViewBox: true},
+                    {cleanupIDs: false}
+                ]
+            })]))
         .pipe(gulp.dest(path.build.img))
+        .pipe(size({title: 'img'}))
         .pipe(reload({stream: true}));
 });
 
@@ -126,13 +134,23 @@ gulp.task('fonts:build', function() {
         .pipe(gulp.dest(path.build.fonts))
 });
 
-gulp.task('build', [
-    'html:build',
-    'js:build',
-    'css:build',
-    'fonts:build',
-    'image:build'
-]);
+gulp.task('build', function (cb) {
+    runSequence(
+        'html:build',
+        'js:build',
+        'css:build',
+        'fonts:build',
+        'image:build',
+        function (error) {
+            if (error) {
+                console.log(error.message);
+            } else {
+                console.log('Build successfully');
+            }
+            cb(error);
+        }
+    )
+});
 
 
 gulp.task('watch', function(){
