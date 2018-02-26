@@ -37,7 +37,7 @@
 .t26{ font: 15px "Georgia"; line-height: 18px; color:#000000; }
 .t27{ font: 7px "Georgia"; line-height: 8px; color:#000000; }
 .t28{ font: 3vh "Georgia"; line-height: 1%; color:#4578EF; }
-.t28_1{ font: 1.2% "Georgia"; line-height: 6vh; color:#4578EF; }
+.t28_1{ font: 150% "Georgia"; line-height: 6vh; color:#4578EF; }
 .t29{ font: 2.3vh "Georgia"; line-height: 1%; color:#4578EF; }
 .t30{ font: 1.2vw "Georgia"; line-height: 25px; color:#FFFFFF; }
 .t31{ font: 21px "Georgia"; line-height: 25px; color:#7F0000; }
@@ -45,8 +45,6 @@
 .t33{ font: 21px "Georgia"; line-height: 25px; color:#0000FF; }
 .t34{ font: 21px "Georgia"; line-height: 25px; color:#005B00; }
 .t35{ font: 16px "Times New Roman"; line-height: 19px; color:#000000; }
-.bt1{ display: block; width: 400px; height: 300px; background: url(../sc-pic/i0262.jpg) 0 0 no-repeat; }
-.bt2{ display: block; width: 319px; height: 319px; background: url(../sc-pic/i0276.png) 0 0 no-repeat; }
 .bt3:hover{ }
 .bt4:hover{ }
 .bt5:hover{ }
@@ -71,8 +69,6 @@
 .t42{ font: 25px "Georgia"; line-height: 30px; color:#000000; }
 .t43{ font: 33px "Georgia"; line-height: 38px; color:#7F6868; }
 .a2 {} .a2:hover { color: #BFBFBF; }
-.bt18{ display: block; width: 310px; height: 233px; background: url(../sc-pic/i6556.png) 0 0 no-repeat; }
-.bt19{ display: block; width: 243px; height: 243px; background: url(../sc-pic/i6557.png) 0 0 no-repeat; }
 .t44{ font: 16px "Georgia"; line-height: 18px; color:#7F6E6E; }
 .t45{ font: 20px "Times New Roman"; line-height: 22px; color:#000000; }
 .t46{ font: 20px "Times New Roman"; line-height: 22px; color:#7F7F00; }
@@ -203,8 +199,6 @@
 .bt28:hover{ }
 .bt29:hover{ }
 .bt30:hover{ }
-.bt31{ display: block; width: 310px; height: 233px; background: url(../sc-pic/i11603.png) 0 0 no-repeat; }
-.bt32{ display: block; width: 243px; height: 243px; background: url(../sc-pic/i11604.png) 0 0 no-repeat; }
 .bt33:hover{ }
 .t142{ font: 36px "Georgia"; line-height: 41px; color:#A0C8EF; }
 .t143{ font: 36px "Georgia"; line-height: 41px; color:#947171; }
