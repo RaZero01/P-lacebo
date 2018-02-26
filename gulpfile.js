@@ -25,7 +25,7 @@ var gulp = require('gulp'),
 
 require('gulp-task-list')(gulp, ['html:build', 'css:build', 'css:build', 'image:build', 'fonts:build', 'js:build',
     'github-release', 'watch', 'webserver', 'patch-version', 'minor-version', 'major-version', 'push-changes',
-    'create-new-tag']);
+    'create-new-tag', 'create-commit']);
 
 var path = {
     build: {
@@ -205,10 +205,6 @@ gulp.task('create-new-tag', function (cb) {
 });
 
 gulp.task('create-commit', function (cb) {
-    // return gulp.src('.')
-    //     .pipe(git.add())
-    //     .pipe(git.commit());
-
     gulp.src('package.json')
         .pipe(git.add())
         .pipe(prompt.prompt({
@@ -224,6 +220,7 @@ gulp.task('create-commit', function (cb) {
 gulp.task('patch-release', function (callback) {
     runSequence(
         'patch-version',
+        'create-commit',
         'push-changes',
         'create-new-tag',
         'github-release',
@@ -240,6 +237,7 @@ gulp.task('patch-release', function (callback) {
 gulp.task('minor-release', function (callback) {
     runSequence(
         'minor-version',
+        'create-commit',
         'push-changes',
         'create-new-tag',
         'github-release',
@@ -256,6 +254,7 @@ gulp.task('minor-release', function (callback) {
 gulp.task('major-release', function (callback) {
     runSequence(
         'major-version',
+        'create-commit',
         'push-changes',
         'create-new-tag',
         'github-release',
