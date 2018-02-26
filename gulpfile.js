@@ -4,14 +4,16 @@ var gulp = require('gulp'),
     watch = require('gulp-watch'),
     prefixer = require('gulp-autoprefixer'),
     uglify = require('gulp-uglify'),
-    sass = require('gulp-sass'),
-    sourcemaps = require('gulp-sourcemaps'),
     rigger = require('gulp-rigger'),
     cssmin = require('gulp-minify-css'),
     imagemin = require('gulp-imagemin'),
     pngquant = require('imagemin-pngquant'),
     rimraf = require('rimraf'),
-    browserSync = require("browser-sync"),
+    browserSync = require('browser-sync'),
+    concat = require('gulp-concat'),
+    mainBowerFiles = require('main-bower-files'),
+    filter = require('gulp-filter'),
+    order = require('gulp-order'),
     reload = browserSync.reload;
 
 var path = {
@@ -24,16 +26,16 @@ var path = {
     },
     src: {
         html: 'src/*.html',
-        js: 'src/js/main.js',
-        style: 'src/style/main.scss',
-        img: 'src/img/**/*.*',
+        js: 'src/js/**/*.js',
+        css: 'src/css/**/*.css',
+        img: 'src/img/**/*',
         fonts: 'src/fonts/**/*.*'
     },
     watch: {
         html: 'src/**/*.html',
         js: 'src/js/**/*.js',
-        style: 'src/style/**/*.scss',
-        img: 'src/img/**/*.*',
+        css: 'src/css/**/*.css',
+        img: 'src/img/**/*',
         fonts: 'src/fonts/**/*.*'
     },
     clean: './build'
@@ -41,12 +43,12 @@ var path = {
 
 var config = {
     server: {
-        baseDir: "./build"
+        baseDir: './build'
     },
-    tunnel: true,
+    tunnel: false,
     host: 'localhost',
     port: 9000,
-    logPrefix: "Frontend_Devil"
+    logPrefix: 'P-lacebo'
 };
 
 gulp.task('webserver', function () {
@@ -65,25 +67,33 @@ gulp.task('html:build', function () {
 });
 
 gulp.task('js:build', function () {
-    gulp.src(path.src.js)
-        .pipe(rigger())
-        .pipe(sourcemaps.init())
-        .pipe(uglify())
-        .pipe(sourcemaps.write())
+    gulp.src(mainBowerFiles( { filter: "**/*.js",
+        paths: {
+            bowerDirectory: 'bower_components',
+            bowerrc: '.bowerrc',
+            bowerJson: 'bower.json'
+        }}).concat(path.src.js))
+        .pipe(concat('main.js'))
+        // .pipe(uglify())
         .pipe(gulp.dest(path.build.js))
         .pipe(reload({stream: true}));
 });
 
-gulp.task('style:build', function () {
-    gulp.src(path.src.style)
-        .pipe(sourcemaps.init())
-        .pipe(sass({
-            sourceMap: true,
-            errLogToConsole: true
-        }))
+gulp.task('css:build', function () {
+    gulp.src(mainBowerFiles( { filter: "**/*.css",
+        paths: {
+            bowerDirectory: 'bower_components',
+            bowerrc: '.bowerrc',
+            bowerJson: 'bower.json'
+        }}).concat(path.src.css))
+        .pipe(order([
+            'normalize.css',
+            'fonts.css',
+            '*'
+        ]))
+        .pipe(concat('main.css'))
         .pipe(prefixer())
-        .pipe(cssmin())
-        .pipe(sourcemaps.write())
+        // .pipe(cssmin())
         .pipe(gulp.dest(path.build.css))
         .pipe(reload({stream: true}));
 });
@@ -108,7 +118,7 @@ gulp.task('fonts:build', function() {
 gulp.task('build', [
     'html:build',
     'js:build',
-    'style:build',
+    'css:build',
     'fonts:build',
     'image:build'
 ]);
@@ -118,8 +128,8 @@ gulp.task('watch', function(){
     watch([path.watch.html], function(event, cb) {
         gulp.start('html:build');
     });
-    watch([path.watch.style], function(event, cb) {
-        gulp.start('style:build');
+    watch([path.watch.css], function(event, cb) {
+        gulp.start('css:build');
     });
     watch([path.watch.js], function(event, cb) {
         gulp.start('js:build');
