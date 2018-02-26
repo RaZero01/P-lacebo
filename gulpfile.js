@@ -15,7 +15,7 @@ var gulp = require('gulp'),
     order = require('gulp-order'),
     reload = browserSync.reload,
     runSequence = require('run-sequence'),
-    conventionalChangelog = require('gulp-conventional-changelog'),
+    prompt = require('gulp-prompt'),
     conventionalGithubReleaser = require('conventional-github-releaser'),
     bump = require('gulp-bump'),
     gutil = require('gulp-util'),
@@ -202,6 +202,23 @@ gulp.task('create-new-tag', function (cb) {
     function getPackageJsonVersion () {
         return JSON.parse(fs.readFileSync('./package.json', 'utf8')).version;
     }
+});
+
+gulp.task('create-commit', function (cb) {
+    // return gulp.src('.')
+    //     .pipe(git.add())
+    //     .pipe(git.commit());
+
+    gulp.src('package.json')
+        .pipe(git.add())
+        .pipe(prompt.prompt({
+            type: 'input',
+            name: 'commit',
+            message: 'Please enter commit message...'
+        },  function(res){
+            return gulp.src([ '!node_modules/', '!bower_components', '!build', '!credentials.json', './*' ], {buffer:false})
+                .pipe(git.commit(res.commit));
+        }));
 });
 
 gulp.task('patch-release', function (callback) {
