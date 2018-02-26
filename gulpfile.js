@@ -12,9 +12,20 @@ var gulp = require('gulp'),
     browserSync = require('browser-sync'),
     concat = require('gulp-concat'),
     mainBowerFiles = require('main-bower-files'),
-    filter = require('gulp-filter'),
     order = require('gulp-order'),
-    reload = browserSync.reload;
+    reload = browserSync.reload,
+    runSequence = require('run-sequence'),
+    conventionalChangelog = require('gulp-conventional-changelog'),
+    conventionalGithubReleaser = require('conventional-github-releaser'),
+    bump = require('gulp-bump'),
+    gutil = require('gulp-util'),
+    git = require('gulp-git'),
+    credentials = require('./credentials.json'),
+    fs = require('fs');
+
+require('gulp-task-list')(gulp, ['html:build', 'css:build', 'css:build', 'image:build', 'fonts:build', 'js:build',
+    'github-release', 'watch', 'webserver', 'patch-version', 'minor-version', 'major-version', 'push-changes',
+    'create-new-tag']);
 
 var path = {
     build: {
@@ -74,7 +85,7 @@ gulp.task('js:build', function () {
             bowerJson: 'bower.json'
         }}).concat(path.src.js))
         .pipe(concat('main.js'))
-        // .pipe(uglify())
+        .pipe(uglify())
         .pipe(gulp.dest(path.build.js))
         .pipe(reload({stream: true}));
 });
@@ -93,7 +104,7 @@ gulp.task('css:build', function () {
         ]))
         .pipe(concat('main.css'))
         .pipe(prefixer())
-        // .pipe(cssmin())
+        .pipe(cssmin())
         .pipe(gulp.dest(path.build.css))
         .pipe(reload({stream: true}));
 });
@@ -142,5 +153,101 @@ gulp.task('watch', function(){
     });
 });
 
-
 gulp.task('default', ['build', 'webserver', 'watch']);
+
+gulp.task('github-release', function(done) {
+    conventionalGithubReleaser({
+        type: "oauth",
+        token: credentials.github_token
+    }, {
+        preset: 'angular'
+    }, done);
+});
+
+gulp.task('patch-version', function () {
+    return gulp.src(['./bower.json', './package.json'])
+        .pipe(bump({type: 'patch'}).on('error', gutil.log))
+        .pipe(gulp.dest('./'));
+});
+
+gulp.task('major-version', function () {
+    return gulp.src(['./bower.json', './package.json'])
+        .pipe(bump({type: 'major'}).on('error', gutil.log))
+        .pipe(gulp.dest('./'));
+});
+
+gulp.task('minor-version', function () {
+    return gulp.src(['./bower.json', './package.json'])
+        .pipe(bump({type: 'minor'}).on('error', gutil.log))
+        .pipe(gulp.dest('./'));
+});
+
+gulp.task('push-changes', function (cb) {
+    git.revParse({args:'--abbrev-ref HEAD'}, function (err, branch) {
+        git.push('origin', branch, cb);
+    });
+});
+
+gulp.task('create-new-tag', function (cb) {
+    var version = getPackageJsonVersion();
+    git.tag(version, 'Created Tag for version: ' + version, function (error) {
+        if (error) {
+            return cb(error);
+        }
+        git.revParse({args:'--abbrev-ref HEAD'}, function (err, branch) {
+            git.push('origin', branch, {args: '--tags'}, cb);
+        });
+    });
+
+    function getPackageJsonVersion () {
+        return JSON.parse(fs.readFileSync('./package.json', 'utf8')).version;
+    }
+});
+
+gulp.task('patch-release', function (callback) {
+    runSequence(
+        'patch-version',
+        'push-changes',
+        'create-new-tag',
+        'github-release',
+        function (error) {
+            if (error) {
+                console.log(error.message);
+            } else {
+                console.log('PATCH RELEASE FINISHED SUCCESSFULLY');
+            }
+            callback(error);
+        });
+});
+
+gulp.task('minor-release', function (callback) {
+    runSequence(
+        'minor-version',
+        'push-changes',
+        'create-new-tag',
+        'github-release',
+        function (error) {
+            if (error) {
+                console.log(error.message);
+            } else {
+                console.log('MINOR RELEASE FINISHED SUCCESSFULLY');
+            }
+            callback(error);
+        });
+});
+
+gulp.task('major-release', function (callback) {
+    runSequence(
+        'major-version',
+        'push-changes',
+        'create-new-tag',
+        'github-release',
+        function (error) {
+            if (error) {
+                console.log(error.message);
+            } else {
+                console.log('MAJOR RELEASE FINISHED SUCCESSFULLY');
+            }
+            callback(error);
+        });
+});
