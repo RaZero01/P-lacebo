@@ -10,4 +10,19 @@
     text-align: center;
 }
 
+.description{
+    margin: 5% 0 0 0;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    font: 3vh "Georgia";
+    line-height: 41px;
+    color:#000000;
+}
+
+.title{
+    margin: 15% 0 0 0;
+    text-align: center;
+}
+
 
