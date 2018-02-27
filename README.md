@@ -1,6 +1,5 @@
 # P-lacebo
-### Site webpage 
-<p-lacebo.com>
+### Site webpage [p-lacebo.com](p-lacebo.com)
 
 ## Authors
 - IT-Director, Front-end Developer - Konstantin Razinkov <korazinkov@gmail.com>
