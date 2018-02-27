@@ -1,12 +1,9 @@
 {
   "name": "p-lacebo",
-  "version": "0.6.2",
+  "version": "0.7.git 1",
   "description": "p-lacebo.com website",
   "author": "Konstantin <Korazinkov@gmail.com>, Ivan <ivan3177@gmail.com>, Dmitriy <lirveez@gmail.com>",
   "license": "ISC",
-  "dependencies": {
-    "jquery": "^3.3.1"
-  },
   "repository": "git@github.com:RaZero01/P-lacebo.git",
   "devDependencies": {
     "browser-sync": "^2.23.6",
