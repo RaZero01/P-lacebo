@@ -10,7 +10,11 @@
 For all questions feel free to contact project TeamLead: \
 **Ivan Sokolovskii \
 <ivan3177@gmail.com> \
-Telegram: @ivan3177**
+Telegram: @ivan3177** \
+Or project IT-director: \
+**Konstantin Razinkov \
+<korazinkov@gmail.com> \
+Telegram: @RaZero01** 
 
 
 # Project HOWTO
