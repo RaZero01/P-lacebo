@@ -1,5 +1,5 @@
 # P-lacebo
-### Site webpage p-lacebo.com
+### Site webpage <p-lacebo.com>
 
 ## Authors
 - IT-Director, Front-end Developer - Konstantin Razinkov <korazinkov@gmail.com>
@@ -7,7 +7,7 @@
 - Front-end Developer - Dmitriy Matushin <lirveez@gmail.com>
 
 ### Feedback
-For all questions feel free to contact project TeamLead \
+For all questions feel free to contact project TeamLead: \
 **Ivan Sokolovskii \
 <ivan3177@gmail.com> \
 Telegram: @ivan3177**
@@ -43,16 +43,16 @@ npm install -g bower
 placed in _build_ directory and local web server will be started. \
 Browser will be opened with local server url. \
 All files are being **watched** so all changed in _src_ will be 
-automatically put to _build_ and browser will be reloaded. \
-- To just **build** project run _gulp build_ \
-- To **clean** run _gulp clean_ \
+automatically put to _build_ and browser will be reloaded.
+- To just **build** project run _gulp build_
+- To **clean** run _gulp clean_
 - _gulp task-list_ to list all available tasks.
 
 When all changes are ready to be released on Github use gulp tasks 
-to make release. \
-* _gulp patch-release_ - for small releases like bugfix \
-* _gulp minor-release_ - for minor releases like new functionality \
-* _gulp major-release_ - for major releases \
+to make release.
+* _gulp patch-release_ - for small releases like bugfix
+* _gulp minor-release_ - for minor releases like new functionality
+* _gulp major-release_ - for major releases
 Gulp will prompt for commit message, automatically increment versions
 in package.json and bower.json, create tag for commit and push all to
 Github.
