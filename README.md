@@ -60,3 +60,9 @@ to make release.
 Gulp will prompt for commit message, automatically increment versions
 in package.json and bower.json, create tag for commit and push all to
 Github.
+
+To **deploy** built version to host use _gulp deploy_ command. For it's proper work add to credentials.json: \
+    "ftp_user": "user", \
+    "ftp_password": "password", \
+    "host": "host", \
+    "remote_path": "path"

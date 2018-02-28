@@ -20,7 +20,7 @@ var gulp = require('gulp'),
     gutil = require('gulp-util'),
     git = require('gulp-git'),
     credentials = require('./credentials.json'),
-    cache = require('gulp-cache'),
+    sftp = require('gulp-sftp'),
     size = require('gulp-size'),
     changed = require('gulp-changed'),
     fs = require('fs');
@@ -284,4 +284,14 @@ gulp.task('major-release', function (callback) {
             }
             callback(error);
         });
+});
+
+gulp.task('deploy', function (cb) {
+    return gulp.src('build/**/*')
+        .pipe(sftp({
+            host: credentials.host,
+            user: credentials.ftp_user,
+            pass: credentials.ftp_password,
+            remotePath: credentials.remote_path
+        }))
 });

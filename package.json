@@ -1,6 +1,6 @@
 {
   "name": "p-lacebo",
-  "version": "0.10.0",
+  "version": "0.10.1",
   "description": "p-lacebo.com website",
   "author": "Konstantin <Korazinkov@gmail.com>, Ivan <ivan3177@gmail.com>, Dmitriy <lirveez@gmail.com>",
   "license": "ISC",
@@ -25,6 +25,7 @@
     "gulp-cache": "^1.0.2",
     "gulp-size": "^3.0.0",
     "gulp-changed": "^3.2.0",
+    "gulp-sftp": "^0.1.5",
     "fs": "^0.0.1-security",
     "conventional-github-releaser": "^2.0.0",
     "run-sequence": "^2.2.1",
