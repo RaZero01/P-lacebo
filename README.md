@@ -56,7 +56,7 @@ When all changes are ready to be released on Github use gulp tasks
 to make release.
 * _gulp patch-release_ - for small releases like bugfix
 * _gulp minor-release_ - for minor releases like new functionality
-* _gulp major-release_ - for major releases
+* _gulp major-release_ - for major releases \
 Gulp will prompt for commit message, automatically increment versions
 in package.json and bower.json, create tag for commit and push all to
 Github.
