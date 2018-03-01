@@ -1,12 +1,5 @@
 .img1{
     width: 40vh;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 20px;
-    padding-bottom: 10px;
-    margin-right: 20px;
-    margin-top: 20px;
-    margin-bottom: 5px;
     text-align: center;
 }
 
@@ -34,6 +27,9 @@
     align-content: center;
 }
 .flex-parts{
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: 30px;
     justify-content: center;
     align-items: center;
     max-width: max-content;
@@ -45,4 +41,8 @@
 }
 .right{
     text-align: right;
+}
+.link{
+    background: #00CC00 ;
+    cursor:pointer
 }

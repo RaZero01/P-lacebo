@@ -231,4 +231,24 @@
 .hr31 h3 { text-align:left; font: 21px "Georgia"; line-height: 25px; color:#680000; }
 .t161{ font: 33px "Georgia"; line-height: 38px; color:#20206F; }
 .t162{ font: 29px "Georgia"; line-height: 34px; color:#20206F; }
-.names{ font: 2vh "Georgia";}
+.names-top{
+    padding-top: 25px;
+    padding-bottom: 5px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: 30px;
+    margin-top: 25px;
+    margin-bottom: 5px;
+    font: 2vh "Georgia";
+    color: black;}
+.names-bottom{
+    padding-top: 5px;
+    padding-bottom: 20px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: 30px;
+    margin-top: 5px;
+    margin-bottom: 25px;
+    font: 2vh "Georgia";
+    color: black;
+}
