@@ -18,22 +18,22 @@
 }
 
 .img1{
-    width: 40vh;
+    width: 21vw;
     text-align: center;
 }
 
 .description{
-    margin: 5% 0 0 0;
+    margin: 5% 3% 0 3%;
     text-align: justify;
     padding-left: 30px;
     padding-right: 30px;
     font: 3vh "Georgia";
-    line-height: 41px;
+    line-height: 4vw;
     color:#000000;
 }
 
 .title{
-    margin: 15% 0 0 0;
+    margin: 12% 0 0 0;
     text-align: center;
 }
 
