@@ -18,7 +18,7 @@
 }
 
 .img1{
-    width: 40vh;
+    width: 400px;
     text-align: center;
 }
 
@@ -27,7 +27,7 @@
     text-align: justify;
     padding-left: 30px;
     padding-right: 30px;
-    font: 3vh "Georgia";
+    font: 25px "Georgia";
     line-height: 41px;
     color:#000000;
 }
