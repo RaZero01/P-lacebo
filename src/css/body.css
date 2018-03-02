@@ -30,7 +30,6 @@
     padding-right: 15px;
     padding-left: 15px;
     margin-right: 15px;
-    margin-right: 15px;
     justify-content: center;
     align-items: center;
     max-width: max-content;
@@ -43,7 +42,20 @@
 .right{
     text-align: right;
 }
-.link{
-    background: #00CC00 ;
-    cursor:pointer
+.block{
+    -webkit-transform: scale(1,1);
+    -webkit-transition-timing-function: ease-out;
+    -webkit-transition-duration: 550ms;
+    -moz-transform: scale(1,1);
+    -moz-transition-timing-function: ease-out;
+    -moz-transition-duration: 550ms;
+}
+.block:hover{
+    cursor:pointer;
+    -webkit-transform: scale(1.1,1.1);
+    -webkit-transition-timing-function: ease-out;
+    -webkit-transition-duration: 550ms;
+    -moz-transform: scale(1.1,1.1);
+    -moz-transition-timing-function: ease-out;
+    -moz-transition-duration: 550ms;
 }
