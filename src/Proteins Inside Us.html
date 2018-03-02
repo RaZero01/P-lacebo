@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Мир белков внутри нас</title><meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/png" href="img/Logo-mini.jpg" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -11,9 +12,8 @@
 //= template/header.html
 
 <div class="title"> <span class="t001" ><i>Коллекция «Мир белков внутри нас»</i></span></div>
-<section class="content" style="text-align: center">
-    <div class="description">
-    <span >
+<div class="description">
+    <span class="t0001">
         Коллекция Даниила Пискарева "Мир белков внутри нас" насчитывает более 30 разнообразных работ.
         Все работы напечатаны на профессиональной глянцевой фотобумаге от компании Fujifilm.
         Работы создаются с учетом персональных предпочтений заказчика: осуществляется подбор белка, фона, паспарту, рамы и размера работы,
@@ -21,15 +21,19 @@
     </span>
 
 
-    </div>
+</div>
+<section class="content" style="text-align: center">
+
     <div class="flex-block">
-        <div >
-            <div class="names-top">Технический партнер</div>
-            <a class="img" href="">
-                <div class="flex-parts">
-                    <img class="img1" src="img/Proteins%20Inside%20Us/Partner.jpg" alt="Фотолаб" width="80%"></div>
-            </a>
-            <div class="names-bottom">Фотолаборатория "Фотолаб"<br>Читать подробнее...</div>
+        <div class="block" onclick="location.href=''">
+            <div class="names-top"><span>Технический партнер</span></div>
+            <div class="flex-parts">
+                <a class="img1" href="" title="">
+                    <img class="img1" src="img/Proteins%20Inside%20Us/Partner.jpg" width="80%"></a>
+            </div>
+            <div class="names-bottom">
+                <span>Фотолаборатория "Фотолаб"<br> Читать подробнее...</span>
+            </div>
         </div>
     </div>
 </section>
@@ -205,5 +209,6 @@
     </div>
 </section>
 
+//= template/footer.html
 </body>
 </html>
