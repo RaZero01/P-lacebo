@@ -1,8 +1,8 @@
 .t0{ font: 2vh "Georgia"; line-height: 1vh; color:#FFFFFF; }
 .t01{ font: 4vh "Georgia"; line-height: 1vh; color:#FFFFFF; }
-.t001{ font: 4vw "FRANKLIN GOTHIC MEDIUM"; line-height: 4vw; color:#000000; }
+.t001{ font: 50px "FRANKLIN GOTHIC MEDIUM"; line-height: 40px; color:#000000; }
 .t0011{ font: 80px "FRANKLIN GOTHIC MEDIUM"; line-height: 41px; color:#000000; }
-.t0001{ font: 3vh "Georgia"; line-height: 41px; color:#000000; }
+.t0001{ font: 100% "Georgia"; line-height: 41px; color:#000000; }
 .t00011{ font: 3vh "Georgia"; line-height: 3%; color:#000000; }
 .t1{ font: 36px "Georgia"; line-height: 41px; color:#940000; }
 .p1{ text-align:center; }
@@ -234,21 +234,22 @@
 .names-top{
     padding-top: 25px;
     padding-bottom: 5px;
-    padding-right: 15px;
-    padding-left: 15px;
+    padding-left: 20px;
     margin-right: 30px;
     margin-top: 25px;
     margin-bottom: 5px;
     font: 2.3vh "Georgia";
-    color: black;}
+    color: black;
+    font-weight: 900;
+}
 .names-bottom{
     padding-top: 5px;
     padding-bottom: 20px;
-    padding-right: 15px;
-    padding-left: 15px;
+    padding-left: 20px;
     margin-right: 30px;
     margin-top: 5px;
     margin-bottom: 25px;
     font: 2vh "Georgia";
     color: black;
+    font-weight: 900;
 }

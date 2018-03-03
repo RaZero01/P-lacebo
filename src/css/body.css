@@ -65,6 +65,7 @@
     text-align: right;
 }
 .block{
+    margin-right: 10px;
     -webkit-transform: scale(1,1);
     -webkit-transition-timing-function: ease-out;
     -webkit-transition-duration: 550ms;

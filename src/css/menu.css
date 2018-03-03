@@ -1,7 +1,7 @@
 .navbar-collapse {
-    max-height: 340px;
-    padding-right: 15px;
-    padding-left: 15px;
+    min-height: 50px;
+    padding-right: 5px;
+    padding-left: 5px;
     overflow-x: visible;
     -webkit-overflow-scrolling: touch;
 }
@@ -55,7 +55,7 @@
     margin-right: auto;
 }
 .menu{
-    font: 100% "Georgia";
+    font: 116% "Georgia";
     color: white;
 }
 .menu:hover{
