@@ -1,50 +1,48 @@
 <!DOCTYPE html>
-<html lang="ru" xmlns="http://www.w3.org/1999/html">
+<html lang="ru">
 <head>
+    //= template/GoogleAnalytics.html
+
     <meta charset="UTF-8">
     <title>Тайнопись Бога внутри нас</title><meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/png" href="img/Logo-mini.jpg" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
 </head>
-<body style="background-color: darkgray">
+<body class="body">
+
+
 //= template/header.html
 
 <div class="title"> <span class="t001" ><i>Коллекция «Тайнопись Бога внутри нас»</i></span></div>
-<section class="content" style="text-align: center">
-    <div class="description">
-    <span >
+<div class="description">
+    <span class="t0001" >
         Данная коллекция сделана в сотрудничестве с известной московской художницей Аленой Матвеевой, чей стиль – напоминает древние идеографические письмена.
         Для кого-то данные работы напомнят мексиканскую культуру, а другие вспомнят арабское письмо. Каждая работа сделана в единственном экземпляре и не имеет аналогов.
     </span>
-    </div>
+</div>
+<section class="content" style="text-align: center">
+
     <div class="flex-block">
-        <div >
-            <div class="names-top">Художница</div>
-            <a class="img" href="">
-                <div class="flex-parts">
-                    <img class="img" src="img/God%20Inside%20Us/Sponsor.jpg" alt="Алена Матвеева" width="80%"></div>
-            </a>
-            <div class="names-bottom">Алена Матвеева<br>Читать подробнее...</div>
-        </div>
-        </div>
-    <div></div>
-        <div class="flex-block">
-            <div >
-                <div class="names-top">Технический партнер</div>
-                <a class="img" href="">
-                    <div class="flex-parts">
-                        <img class="img" src="img/Proteins%20Inside%20Us/Partner.jpg" alt="Фотолаб" width="80%"></div>
-                </a>
-                <div class="names-bottom">Фотолаборатория "Фотолаб"<br>Читать подробнее...</div>
+        <div class="block" onclick="location.href='Alena.html'">
+            <div class="names-top"><span>Художница</span></div>
+            <div class="flex-parts">
+                <a class="img1" href="Alena.html" title="">
+                    <img class="img1" src="img/God Inside Us/Sponsor.jpg" width="80%"></a>
+            </div>
+            <div class="names-bottom">
+                <span>Алена Матвеева<br> Читать подробнее...</span>
             </div>
         </div>
+        </div>
+
 </section>
 
 <section class="content" style="margin-top: 5vw; text-align: center">
     <div class="flex-block">
 
-        <div>
+        <div class="block">
             <div class="flex-parts">
                 <a data-fancybox="gallery1"
                    data-caption='<div class="p1 t76" style="text-align: left;"> <span class="t01">Картина "Счастливый цветок. Благородство крови"<br>
@@ -59,12 +57,12 @@
                        href="img/God%20Inside%20Us/Photo1.jpg">
                         <img class="img1" src="img/God%20Inside%20Us/Photo1.jpg">
                     </a></a>
+                <div class="names-bottom">
+                    <span>"Счастливый цветок.<br> Благородство крови"</span>
+                </div>
              </div>
-            <div class="names-bottom">
-                <span>Счастливый цветок.<br> Благородство крови</span>
-            </div>
         </div>
-        <div>
+        <div class="block">
             <div class="flex-parts">
                 <a data-fancybox="gallery2"
                    data-caption='<div class="p1 t76" style=" text-align: left;"> <span class="t01">Картина "Сирень" "Чистый воздух"<br>
@@ -79,12 +77,12 @@
                        href="img/God%20Inside%20Us/Photo2.jpg">
                         <img class="img1" src="img/God%20Inside%20Us/Photo2.jpg">
                     </a></a>
-            </div>
-            <div class="names-bottom">
-               <span> Сирень.<br>Чистый воздух.</span>
+                <div class="names-bottom">
+                    <span> "Сирень.<br>Чистый воздух."</span>
+                </div>
             </div>
         </div>
-       <div>
+       <div class="block">
            <div class="flex-parts">
                <a data-fancybox="gallery3"
                   data-caption='<div class="p1 t76" style=" text-align: left;"> <span class="t01">Картина "Гранат. Письмена любви"<br>
@@ -100,12 +98,12 @@
                        <img class="img1" src="img/God%20Inside%20Us/Photo3.jpg">
                    </a></a>
 
-           </div>
-           <div class="names-bottom">
-               <span>Гранат.<br> Письмена любви</span>
+               <div class="names-bottom">
+                   <span>"Гранат.<br> Письмена любви"</span>
+               </div>
            </div>
        </div>
-       <div>
+       <div class="block">
            <div class="flex-parts">
                <a data-fancybox="gallery4"
                   data-caption='<div class="p1 t76" style=" text-align: left;"> <span class="t01">Картина "Коралловый атолл"<br>
@@ -120,13 +118,29 @@
                       href="img/God%20Inside%20Us/Photo4.jpg">
                        <img class="img1" src="img/God%20Inside%20Us/Photo4.jpg">
                    </a></a>
-           </div>
-           <div class="names-bottom">
-               <span>Коралловый атолл</span>
+               <div class="names-bottom">
+                   <span>"Коралловый атолл"</span>
+               </div>
            </div>
        </div>
-   </div>
+   </div>    <div></div>
+    <div class="flex-block">
+        <div class="block" onclick="location.href='https://www.fotolab.ru/'">
+            <div class="names-top"><span>Технический партнер</span></div>
+            <div class="flex-parts">
+                <a class="img1" href="https://www.fotolab.ru/" title="">
+                    <img class="img1" src="img/Proteins%20Inside%20Us/Partner.jpg"></a>
+                <div class="names-bottom">
+                    <span>Фотолаборатория "Фотолаб"<br> Читать подробнее...</span>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
+<section class="footer" style="margin-top: 7vw">
+   <div style="text-align: center"> <span >P-lacebo © 2017-2018. All rights reserved.</span></div>
+    <div style="text-align: center"><span style="text-align: center">support@p-lacebo.com</span></div>
+</section>
 </body>
 </html>

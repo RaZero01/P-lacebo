@@ -1,59 +1,78 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    //= template/GoogleAnalytics.html
+
     <meta charset="UTF-8">
     <title>События</title><meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/png" href="img/Logo-mini.jpg" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
 </head>
-<body style="background-color: darkgray">
+<body class="body">
+
 //= template/header.html
+
 <section class="content" style="margin-top: 13vw; text-align: center">
     <div class="flex-block">
 
-        <div>
-            <div class="flex-parts">
-                <a data-fancybox="gallery1" data-caption='' href="img/Events/Photo1.jpg">
-                            <img class="img1" src="img/Events/Photo1.jpg">
-                        </a>
-            </div>
-            <div class="names-bottom">
-                <span>Презентация коллекции «Bio jewellry»</span>
-            </div>
-        </div>
-        <div>
-            <div class="flex-parts">
-                        <a data-fancybox="gallery2" data-caption='' href="img/Events/Photo2.jpg">
-                            <img class="img1" src="img/Events/Photo2.jpg">
-                        </a>
-            </div>
-            <div class="names-bottom">
-                <span> Картина в дар для<br> Государственного Дарвиновского Музея</span>
-            </div>
-        </div>
-        <div>
-            <div class="flex-parts">
-                    <a data-fancybox="gallery3" data-caption='' href="img/Events/Photo3.jpg">
-                        <img class="img1" src="img/Events/Photo3.jpg">
-                    </a>
-            </div>
-            <div class="names-bottom">
-                <span>Персональная выставка в<br> центре дизайна ARTPLAY</span>
-            </div>
-        </div>
-        <div>
+        <div class="block">
             <div class="flex-parts">
 
-                    <a data-fancybox="gallery4" data-caption='' href="img/Events/Photo4.jpg">
-                        <img class="img1" src="img/Events/Photo4.jpg">
+                    <a data-fancybox="gallery1"
+                       data-caption=''
+                       href="img/Events/Photo1.jpg">
+                        <img class="img1" src="img/Events/Photo1.jpg">
                     </a>
+                <div class="names-bottom">
+                <span>Презентация коллекции «Bio jewellry»</span>
             </div>
-            <div class="names-bottom">
-                <span>Материал в журнале «Мой любимый дом»</span>
+            </div>
+
+        </div>
+        <div class="block">
+            <div class="flex-parts">
+
+                    <a data-fancybox="gallery2"
+                       data-caption=''
+                       href="img/Events/Photo2.jpg">
+                        <img class="img1" src="img/Events/Photo2.jpg">
+                    </a>
+                <div class="names-bottom">
+                    <span> Картина в дар для<br> Государственного Дарвиновского Музея</span>
+                </div>
             </div>
         </div>
-       </div>
+        <div class="block">
+            <div class="flex-parts">
+
+                    <a data-fancybox="gallery3"
+                       data-caption=''
+                       href="img/Events/Photo3.jpg">
+                        <img class="img1" src="img/Events/Photo3.jpg">
+                    </a>
+
+                <div class="names-bottom">
+                    <span>Персональная выставка <br>в центре дизайна ARTPLAY</span>
+                </div>
+            </div>
+        </div>
+        <div class="block">
+            <div class="flex-parts">
+
+                    <a data-fancybox="gallery4"
+                       data-caption=''
+                       href="img/Events/Photo4.jpg">
+                        <img class="img1" src="img/Events/Photo4.jpg">
+                    </a>
+                <div class="names-bottom">
+                    <span>Материал в журнале «Мой любимый дом»</span>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
+//= template/footer.html
 </body>
 </html>

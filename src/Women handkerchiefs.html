@@ -1,50 +1,91 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    //= template/GoogleAnalytics.html
+
     <meta charset="UTF-8">
     <title>Женские носовые платочки</title><meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/png" href="img/Logo-mini.jpg" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
 </head>
-<body style="background-color: darkgray">
+<body class="body">
 //= template/header.html
 <div class="title"> <span class="t001" ><i>Коллекция «Bio-shawl»</i></span></div>
-<section class="content" style="text-align: center">
-    <div class="description">
-    <span >
+<div class="description">
+    <span class="t0001">
         Коллекция «Bio-shawl» создана в соавторстве c дизайнером машинной вышивки Ингой Крупельницкой. Данная коллекция сделана с применением метода машинной вышивки для нанесения рисунков белковых структур.
 Женские платочки сшиты из хлопка и украшены кружевами. Данный платочек подчеркнет не только Вашу женственность, но и уникальный стиль.
     </span>
-    </div>
+</div>
+<section class="content" style="text-align: center">
+
     <div class="flex-block">
-        <div >
-            <div class="names-top">Творческий партнер</div>
-            <a class="img" href="">
-                <div class="flex-parts"><img class="img1" src="img/Accessories/Women%20handkerchiefs/Partner.png" alt="Инга Крупельницкая"></div>
-            </a>
-            <div class="names-bottom">Инга Крупельницкая<br>Читать подробнее...</div>
+        <div class="block" onclick="location.href='Inga.html'">
+            <div class="names-top"><span>Творческий партнер</span></div>
+            <div class="flex-parts">
+                <a class="img1" href="Inga.html" title="">
+                    <img class="img1" src="img/Accessories/Women%20handkerchiefs/Partner.png" width="80%"></a>
+            </div>
+            <div class="names-bottom">
+                <span>Инга Крупельницкая<br> Читать подробнее...</span>
+            </div>
         </div>
     </div>
 </section>
 
 <section class="content" style=" text-align: center">
     <div class="flex-block">
-        <div>
+        <div class="block">
             <div class="flex-parts">
-                <img class="img1"  src="img/Accessories/Women%20handkerchiefs/Photo1.jpg" width="350vw">
+                <a data-fancybox="gallery1" data-caption='<div class="p1 t76" style="text-align: left;">
+                <span class="t01">Носовой платочек "Кошечка"<br>
+                <span class="t01">Инга Крупельницкая & Даниил Пискарев <br><span class="t0">100% хлопок. Машинная вышивка.
+Изображен белок Крамбин. Он является одним из основных белков, участвующих в
+ процессе фотосинтеза.
+
+                 </span></div></div>'
+                   href="img/Accessories/Women%20handkerchiefs/Photo1Big.jpg">
+                    <a data-fancybox="gallery1" data-caption='<div class="p1 t76"
+                     style="text-align: left;"> <span class="t01">Носовой платочек "Кошечка"<br>
+                <span class="t01">Инга Крупельницкая & Даниил Пискарев <br><span class="t0">100% хлопок. Машинная вышивка.
+Изображен белок Крамбин. Он является одним из основных белков, участвующих в
+ процессе фотосинтеза.
+
+                 </span></div></div>'
+                       href="img/Accessories/Women%20handkerchiefs/Photo1.jpg">
+                        <img class="img1" src="img/Accessories/Women%20handkerchiefs/Photo1.jpg">
+                    </a></a>
             </div>
             <div class="names-bottom"><span>"Кошечка"</span></div>
         </div>
-        <div>
+        <div  class="block">
             <div class="flex-parts">
-                <img class="img1"  src="img/Accessories/Women%20handkerchiefs/Photo2.jpg" width="350vw">
+                <a data-fancybox="gallery2" data-caption='<div class="p1 t76" style="text-align: left;">
+                <span class="t01">Носовой платочек "Роза на воде"<br>
+                <span class="t01">Инга Крупельницкая & Даниил Пискарев <br><span class="t0">100% хлопок.Машинная вышивка.
+Изображен белок Гемоглобин. Гемоглобин транспортирует кислород и углекислый газ в крови.
+
+                 </span></div></div>'
+                   href="img/Accessories/Women%20handkerchiefs/Photo2Big.jpg">
+                    <a data-fancybox="gallery2" data-caption='<div class="p1 t76"
+                     style="text-align: left;"> <span class="t01">Носовой платочек "Роза на воде"<br>
+                <span class="t01">Инга Крупельницкая & Даниил Пискарев <br><span class="t0">100% хлопок.Машинная вышивка.
+Изображен белок Гемоглобин. Гемоглобин транспортирует кислород и углекислый газ в крови.
+                 </span></div></div>'
+                       href="img/Accessories/Women%20handkerchiefs/Photo2.jpg">
+                        <img class="img1" src="img/Accessories/Women%20handkerchiefs/Photo2.jpg">
+                    </a></a>
+
             </div>
             <div class="names-bottom"><span>"Роза на воде"</span></div>
         </div>
+
     </div>
 </section>
 </section>
 
+//= template/footer.html
 </body>
 </html>

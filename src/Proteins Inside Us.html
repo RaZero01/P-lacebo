@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    //= template/GoogleAnalytics.html
+
     <meta charset="UTF-8">
     <title>Мир белков внутри нас</title><meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/png" href="img/Logo-mini.jpg" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
 </head>
-<body style="background-color: darkgray">
+<body class="body">
+
+
 //= template/header.html
 
 <div class="title"> <span class="t001" ><i>Коллекция «Мир белков внутри нас»</i></span></div>
-<section class="content" style="text-align: center">
-    <div class="description">
-    <span >
+<div class="description">
+    <span class="t0001">
         Коллекция Даниила Пискарева "Мир белков внутри нас" насчитывает более 30 разнообразных работ.
         Все работы напечатаны на профессиональной глянцевой фотобумаге от компании Fujifilm.
         Работы создаются с учетом персональных предпочтений заказчика: осуществляется подбор белка, фона, паспарту, рамы и размера работы,
@@ -21,15 +25,19 @@
     </span>
 
 
-    </div>
+</div>
+<section class="content" style="text-align: center">
+
     <div class="flex-block">
-        <div >
-            <div class="names-top">Технический партнер</div>
-            <a class="img" href="">
-                <div class="flex-parts">
-                    <img class="img1" src="img/Proteins%20Inside%20Us/Partner.jpg" alt="Фотолаб" width="80%"></div>
-            </a>
-            <div class="names-bottom">Фотолаборатория "Фотолаб"<br>Читать подробнее...</div>
+        <div class="block" onclick="location.href='https://www.fotolab.ru/'">
+            <div class="names-top"><span>Технический партнер</span></div>
+            <div class="flex-parts">
+                <a class="img1" href="https://www.fotolab.ru/" title="">
+                    <img class="img1" src="img/Proteins%20Inside%20Us/Partner.jpg"></a>
+                <div class="names-bottom">
+                    <span>Фотолаборатория "Фотолаб"<br> Читать подробнее...</span>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -37,7 +45,7 @@
 <section class="content" style="margin-top: 5vw; text-align: center">
     <div class="flex-block">
 
-        <div>
+        <div class="block">
             <div class="flex-parts">
                 <a data-fancybox="gallery1"
                    data-caption='<div class="p1 t76" style="text-align: left;"> <span class="t01">"Счастливая планета"<br><span class="t01"> Даниил Пискарев <br>
@@ -58,7 +66,7 @@
                 <span>"Счастливая планета"</span>
             </div>
         </div>
-        <div>
+        <div class="block">
             <div class="flex-parts">
                 <a data-fancybox="gallery2"
                    data-caption='<div class="p1 t76" style="text-align: left;"> <span class="t01">"Жизнь в разрезе" <br><span class="t01"> Даниил Пискарев <br>
@@ -79,7 +87,7 @@
                 <span>"Жизнь в разрезе"</span>
             </div>
         </div>
-        <div>
+        <div class="block">
             <div class="flex-parts">
                 <a data-fancybox="gallery3"
                    data-caption='<div class="p1 t76" style="text-align: left;"> <span class="t01">"Спелое яблоко" <br><span class="t01"> Даниил Пискарев <br>
@@ -98,16 +106,16 @@
                 <span>"Спелое яблоко"</span>
             </div>
         </div>
-        <div>
+        <div class="block">
             <div class="flex-parts">
                 <a data-fancybox="gallery4"
-                   data-caption='<div class="p1 t76" style="text-align: left;"> <span class="t01">"Розовая гортензия"<br><span class="t01"> Даниил Пискарев <br>
+                   data-caption='<div class="p1 t76" style="text-align: left;"> <span class="t01">"Розовая Гортензия"<br><span class="t01"> Даниил Пискарев <br>
                    <span class="t0"> Глянцевая фотобумага Fujifilm. Фотопечать. <br>Изображен белок гемоглобин.
                    <br>Гемоглобин транспортирует кислород и углекислый газ в крови. </span></div></div>'
                    href="img/Proteins%20Inside%20Us/Photo4Big.jpg">
 
                     <a data-fancybox="gallery4"
-                       data-caption='<div class="p1 t76" style="text-align: left;"> <span class="t01">"Розовая гортензия"<br><span class="t01"> Даниил Пискарев <br>
+                       data-caption='<div class="p1 t76" style="text-align: left;"> <span class="t01">"Розовая Гортензия"<br><span class="t01"> Даниил Пискарев <br>
                    <span class="t0"> Глянцевая фотобумага Fujifilm. Фотопечать. <br>Изображен белок гемоглобин.
                    <br>Гемоглобин транспортирует кислород и углекислый газ в крови. </span></div></div>'
                        href="img/Proteins%20Inside%20Us/Photo4.jpg">
@@ -115,10 +123,10 @@
                     </a></a>
             </div>
             <div class="names-bottom">
-                <span>"Розовая гортензия"</span>
+                <span>"Розовая Гортензия"</span>
             </div>
         </div>
-        <div>
+        <div class="block">
             <div class="flex-parts">
                 <a data-fancybox="gallery5"
                    data-caption='<div class="p1 t76" style="text-align: left;"> <span class="t01">"Пионовый сад"<br><span class="t01"> Даниил Пискарев <br>
@@ -138,7 +146,7 @@
                 <span>"Пионовый сад"</span>
             </div>
         </div>
-        <div>
+        <div class="block">
             <div class="flex-parts">
                 <a data-fancybox="gallery6"
                    data-caption='<div class="p1 t76" style="text-align: left;"> <span class="t01">"Бабочки"<br><span class="t01"> Даниил Пискарев <br>
@@ -162,7 +170,7 @@
                 <span>"Бабочки"</span>
             </div>
         </div>
-        <div>
+        <div class="block">
             <div class="flex-parts">
                 <a data-fancybox="gallery7"
                    data-caption='<div class="p1 t76" style="text-align: left;"> <span class="t01">"Мишка с цветами"<br><span class="t01"> Даниил Пискарев <br>
@@ -182,7 +190,7 @@
                 <span>"Мишка с цветами"</span>
             </div>
         </div>
-        <div>
+        <div class="block">
             <div class="flex-parts">
                 <a data-fancybox="gallery8"
                    data-caption='<div class="p1 t76" style="text-align: left;"> <span class="t01">"Лемуры"<br><span class="t01"> Даниил Пискарев <br>
@@ -205,5 +213,9 @@
     </div>
 </section>
 
+<section class="footer" style="margin-top: 7vw">
+   <div style="text-align: center"> <span >P-lacebo © 2017-2018. All rights reserved.</span></div>
+    <div style="text-align: center"><span style="text-align: center">support@p-lacebo.com</span></div>
+</section>
 </body>
 </html>
