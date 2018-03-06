@@ -68,7 +68,7 @@ var config = {
 };
 
 gulp.task('webserver', function () {
-    return connect.server({hostname: '127.0.0.1', port: '9000', base: './build'}, function () {
+    return connect.server({hostname: '127.0.0.1', port: '9000', base: './build', 'stdio': 'ignore'}, function () {
         browserSync(config);
     })
 });
