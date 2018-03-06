@@ -80,7 +80,6 @@ gulp.task('clean', function (cb) {
 
 gulp.task('html:build', function () {
     gulp.src(path.src.html)
-        .pipe(changed(path.build.html))
         .pipe(rigger())
         .pipe(gulp.dest(path.build.html))
         .pipe(reload({stream: true}));
@@ -93,7 +92,6 @@ gulp.task('js:build', function () {
             bowerrc: '.bowerrc',
             bowerJson: 'bower.json'
         }}).concat(path.src.js))
-        .pipe(changed(path.build.js))
         .pipe(concat('main.js'))
         .pipe(uglify())
         .pipe(gulp.dest(path.build.js))
@@ -107,7 +105,6 @@ gulp.task('css:build', function () {
             bowerrc: '.bowerrc',
             bowerJson: 'bower.json'
         }}).concat(path.src.css))
-        .pipe(changed(path.build.css))
         .pipe(order([
             'normalize.css',
             'fonts.css',
