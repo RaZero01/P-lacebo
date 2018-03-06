@@ -23,11 +23,12 @@ var gulp = require('gulp'),
     sftp = require('gulp-sftp'),
     size = require('gulp-size'),
     changed = require('gulp-changed'),
+    connect = require('gulp-connect-php'),
     fs = require('fs');
 
-require('gulp-task-list')(gulp, ['html:build', 'css:build', 'css:build', 'image:build', 'fonts:build', 'js:build',
-    'github-release', 'watch', 'webserver', 'patch-version', 'minor-version', 'major-version', 'push-changes',
-    'create-new-tag', 'create-commit']);
+require('gulp-task-list')(gulp, ['html:build', 'css:build', 'libs:build', 'php:build', 'templates:build', 'image:build',
+    'fonts:build', 'js:build', 'github-release', 'watch', 'webserver', 'patch-version', 'minor-version',
+    'major-version', 'push-changes', 'create-new-tag', 'create-commit']);
 
 var path = {
     build: {
@@ -35,37 +36,42 @@ var path = {
         js: 'build/js/',
         css: 'build/css/',
         img: 'build/img/',
-        fonts: 'build/fonts/'
+        fonts: 'build/fonts/',
+        php: 'build/',
+        libs: 'build/vendor/',
+        templates: 'build/template/'
     },
     src: {
         html: 'src/*.html',
         js: 'src/js/**/*.js',
         css: 'src/css/**/*.css',
         img: 'src/img/**/*.*',
-        fonts: 'src/fonts/**/*.*'
+        fonts: 'src/fonts/**/*.*',
+        php: 'src/*.php',
+        libs: 'vendor/**/*',
+        templates: 'src/template/*.twig'
     },
     watch: {
         html: 'src/**/*.html',
         js: 'src/js/**/*.js',
         css: 'src/css/**/*.css',
         img: 'src/img/**/*.*',
-        fonts: 'src/fonts/**/*.*'
+        fonts: 'src/fonts/**/*.*',
+        php: 'src/**/*.php',
+        templates: 'src/template/*.twig'
     },
     clean: './build'
 };
 
 var config = {
-    server: {
-        baseDir: './build'
-    },
-    tunnel: false,
-    host: 'localhost',
-    port: 9000,
+    proxy: '127.0.0.1:9000',
     logPrefix: 'P-lacebo'
 };
 
 gulp.task('webserver', function () {
-    browserSync(config);
+    connect.server({hostname: '127.0.0.1', port: '9000', base: './build'}, function () {
+        browserSync(config);
+    })
 });
 
 gulp.task('clean', function (cb) {
@@ -74,6 +80,7 @@ gulp.task('clean', function (cb) {
 
 gulp.task('html:build', function () {
     gulp.src(path.src.html)
+        .pipe(changed(path.build.html))
         .pipe(rigger())
         .pipe(gulp.dest(path.build.html))
         .pipe(reload({stream: true}));
@@ -86,6 +93,7 @@ gulp.task('js:build', function () {
             bowerrc: '.bowerrc',
             bowerJson: 'bower.json'
         }}).concat(path.src.js))
+        .pipe(changed(path.build.js))
         .pipe(concat('main.js'))
         .pipe(uglify())
         .pipe(gulp.dest(path.build.js))
@@ -99,6 +107,7 @@ gulp.task('css:build', function () {
             bowerrc: '.bowerrc',
             bowerJson: 'bower.json'
         }}).concat(path.src.css))
+        .pipe(changed(path.build.css))
         .pipe(order([
             'normalize.css',
             'fonts.css',
@@ -131,7 +140,28 @@ gulp.task('image:build', function () {
 
 gulp.task('fonts:build', function() {
     gulp.src(path.src.fonts)
+        .pipe(changed(path.build.fonts))
         .pipe(gulp.dest(path.build.fonts))
+});
+
+gulp.task('php:build', function () {
+    gulp.src(path.src.php)
+        .pipe(changed(path.build.php))
+        .pipe(gulp.dest(path.build.php))
+        .pipe(reload({stream: true}))
+});
+
+gulp.task('templates:build', function () {
+    gulp.src(path.src.templates)
+        .pipe(changed(path.build.templates))
+        .pipe(gulp.dest(path.build.templates))
+        .pipe(reload({stream: true}))
+});
+
+gulp.task('libs:build', function () {
+    gulp.src(path.src.libs)
+        .pipe(changed(path.build.libs))
+        .pipe(gulp.dest(path.build.libs))
 });
 
 gulp.task('build', function (cb) {
@@ -139,6 +169,9 @@ gulp.task('build', function (cb) {
         'html:build',
         'js:build',
         'css:build',
+        'php:build',
+        'templates:build',
+        'libs:build',
         'fonts:build',
         'image:build',
         function (error) {
@@ -169,6 +202,12 @@ gulp.task('watch', function(){
     watch([path.watch.fonts], function(event, cb) {
         gulp.start('fonts:build');
     });
+    watch([path.watch.php], function (event, cb) {
+        gulp.start('php:build');
+    });
+    watch([path.watch.templates], function (event, cb) {
+        gulp.start('templates:build');
+    })
 });
 
 gulp.task('default', ['build', 'webserver', 'watch']);

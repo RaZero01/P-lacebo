@@ -1,0 +1,27 @@
+{% extends 'base.twig' %}
+
+{% block title %}P-lacebo{% endblock %}
+
+{% block content %}
+    <section class="content" style="margin-top: 7vw; text-align: center; overflow-x: hidden">
+        <img class="img1" style="margin-top: 7vw" src="img/Slide1.jpg">
+    </section>
+
+    <section class="content" style="margin-top: 4vw; text-align: center">
+        <div class="flex-block">
+            {% for block in blocks %}
+                <div class="block" onclick="location.href={{ block.url }}">
+                    <div class="names-top"><span>{{ block.name }}</span></div>
+                    <div class="flex-parts">
+                        <a class="img1" href='{{ block.url }}' title="">
+                            <img class="img1" src='{{ block.img }}'></a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="content" style="margin-top: 3vw; text-align: center; overflow-x: hidden">
+        <img class="img1" src="img/Slide2.jpg">
+    </section>
+{% endblock %}

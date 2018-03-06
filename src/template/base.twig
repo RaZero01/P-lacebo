@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head lang="ru">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115060066-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-115060066-1');
+    </script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>{% block title %}{% endblock %}</title>
+
+    <link rel="icon" type="image/jpg" href="img/Logo-mini.jpg" />
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="script" href="/js/main.js">
+</head>
+
+<body class="body">
+
+{% include 'header.twig' %}
+
+{% block content %}
+{% endblock %}
+
+{% include 'footer.twig' %}
+</body>
+</html>
