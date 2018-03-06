@@ -1,0 +1,25 @@
+{% extends 'base.twig' %}
+
+{% block title %}Аксессуары{% endblock %}
+{% block keywords %}p-lacebo, Даниил Пискарев, Аксессуары P-lacebo{% endblock %}
+{% block description %}Аксессуары P-lacebo{% endblock %}
+
+{% block content %}
+    <section class="content" style="margin-top: 7vw; text-align: center">
+        <div class="flex-block">
+            {% for block in blocks %}
+                <div class="block" onclick="location.href='{{ block.url }}'">
+                    <div class="names-top">
+                        <span>{{ block.name|nl2br }}</span></a>
+                    </div>
+                    <div class="flex-parts">
+                        <a href="{{ block.url }}"><img class="img1" src="{{ block.img }}"></a>
+                        <div class="names-bottom">
+                            <span>{{ block.collection|nl2br }}</span></a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

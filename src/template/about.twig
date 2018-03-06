@@ -9,11 +9,11 @@
     <section class="content" style=" text-align: center">
         <div class="flex-block">
             {% for block in blocks %}
-                <div class="block" onclick="location.href='{{ block.url }}'">
+                <div class="block" {% if block.url != '' %} onclick="location.href='{{ block.url }}'"{% endif %}>
                     <div class="names-top"><span>{{ block.name }}</span></div>
                     <div class="flex-parts">
-                        <a class="img1" href="{{ block.url }}" title="">
-                            <img class="img1" src="{{ block.img }}" width="80%"></a>
+                        {% if block.url != '' %}<a class="img1" href="{{ block.url }}" title="">{% endif %}
+                            <img class="img1" src="{{ block.img }}" width="80%">{% if block.url != '' %}</a>{% endif %}
                     </div>
                     <div class="names-bottom">
                         <span>{{ block.job }}</span>
