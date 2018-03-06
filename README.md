@@ -3,11 +3,11 @@
 
 ## Authors
 - IT-Director, Front-end Developer - Konstantin Razinkov <korazinkov@gmail.com>
-- System administrator, TeamLead, DevOps, Front-end Developer - Ivan Sokolovskii <ivan3177@gmail.com>
+- Project Manager, Front-end Developer, System Administrator - Ivan Sokolovskii <ivan3177@gmail.com>
 - Front-end Developer - Dmitriy Matushin <lirveez@gmail.com>
 
 ### Feedback
-For all questions feel free to contact project TeamLead: \
+For all questions feel free to contact project manager: \
 **Ivan Sokolovskii \
 <ivan3177@gmail.com> \
 Telegram: @ivan3177** \
@@ -23,13 +23,19 @@ Telegram: @RaZero01**
 * Clone repository
 * Run npm install to install required plugins
 * Run bower install to install dependencies
+* Run composer install to install required php libraries
 * Create credentials.json file like: \
-{ "github_token": "access token" } \
-And replace access token with API token generated on Github(Settings -
-Developer Settings - Personal access tokens, *repo* should be checked)
-* (*Optional*) Install bower and gulp globally \
+{ \
+    "ftp_user": "user", \
+    "ftp_password": "password", \
+    "host": "host", \
+    "remote_path": "path" \
+} \
+And replace it with your ftp access data.
+* Install bower, gulp and composer(requires php) globally \
 npm install -g gulp \
 npm install -g bower 
+npm install -g composer
 
 
 ## Project structure
@@ -41,6 +47,7 @@ npm install -g bower
 - bower_components(gitignored) - installed project dependencies
 - node_modules(gitignored) - installed plugins for gulp
 - credentials.json(gitignored) - personal programmer info for authorizations
+- vendor(gitignored) - libs for php
 
 ## Workflow
 - To **run** project in console run _gulp_ in console. Result will be 
@@ -61,8 +68,4 @@ Gulp will prompt for commit message, automatically increment versions
 in package.json and bower.json, create tag for commit and push all to
 Github.
 
-To **deploy** built version to host use _gulp deploy_ command. For it's proper work add to credentials.json: \
-    "ftp_user": "user", \
-    "ftp_password": "password", \
-    "host": "host", \
-    "remote_path": "path"
+To **deploy** built version to host use _gulp deploy_ command.
