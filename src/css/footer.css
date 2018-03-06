@@ -1,0 +1,13 @@
+.footer-link {
+    color: black;
+}
+
+.footer-link:hover {
+    color: darkgray;
+}
+.footer-link a:visited {
+    color: black;
+}
+.footer-link a::selection {
+    color: black;
+}

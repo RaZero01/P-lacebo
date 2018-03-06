@@ -1,10 +1,15 @@
 {% extends 'base.twig' %}
 
 {% block title %}P-lacebo{% endblock %}
+{% block keywords %}p-lacebo, Даниил Пискарев, P-lacebo главная страница{% endblock %}
+{% block description %}Главная страница сайта дизайнера Даниила Пискарева P-lacebo.com{% endblock %}
 
 {% block content %}
-    <section class="content" style="margin-top: 7vw; text-align: center; overflow-x: hidden">
-        <img class="img1" style="margin-top: 7vw" src="img/Slide1.jpg">
+    <section class="content" style="margin-top: 7vw; text-align: center; height: 400px">
+        <ul id="slides">
+            <li class="slide showing"><img class="img1" src="img/Slide1.jpg"></li>
+            <li class="slide"><img class="img1" src="img/Slide2.jpg"> </li>
+        </ul>
     </section>
 
     <section class="content" style="margin-top: 4vw; text-align: center">
@@ -19,9 +24,5 @@
                 </div>
             {% endfor %}
         </div>
-    </section>
-
-    <section class="content" style="margin-top: 3vw; text-align: center; overflow-x: hidden">
-        <img class="img1" src="img/Slide2.jpg">
     </section>
 {% endblock %}
