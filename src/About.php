@@ -15,31 +15,31 @@ $blocks = array(
         'job' => 'IT-директор'
     ),
     array(
-        'url' => 'Inga.html',
+        'url' => 'Inga.php',
         'name' => 'Инга Крупельницкая',
         'img' => 'img/About/Photo3.jpg',
         'job' => 'Дизайнер'
     ),
     array(
-        'url' => 'Alena.html',
+        'url' => 'Alena.php',
         'name' => 'Алена Матвеева',
         'img' => 'img/About/Photo4.jpg',
         'job' => 'Художница'
     ),
     array(
-        'url' => '',
+        'url' => 'Alena.php',
         'name' => 'Анастасия Суравнева',
         'img' => 'img/About/Photo5.jpg',
         'job' => 'Художница'
     ),
     array(
-        'url' => 'Igor.html',
+        'url' => 'Igor.php',
         'name' => 'Игорь Пискарев',
         'img' => 'img/About/Photo6.jpg',
         'job' => 'Фотограф'
     ),
     array(
-        'url' => 'Andrey.html',
+        'url' => 'Andrey.php',
         'name' => 'Андрей Шевченко',
         'img' => 'img/About/Photo7.jpg',
         'job' => 'Ювелир'
