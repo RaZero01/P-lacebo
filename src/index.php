@@ -5,7 +5,7 @@ $blocks = array(
     array(
         'url' => 'ART.html',
         'name' => 'ART',
-        'img' => 'img/God Inside Us/Group Photo.JPG'
+        'img' => 'img/God Inside Us/Group Photo.jpg'
     ),
     array(
         'url' => 'Accessories.html',

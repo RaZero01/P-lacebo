@@ -45,7 +45,7 @@ var path = {
         html: 'src/*.html',
         js: 'src/js/**/*.js',
         css: 'src/css/**/*.css',
-        img: 'src/img/**/*.*',
+        img: 'src/img/**/*.{gif,jpg,png,svg}',
         fonts: 'src/fonts/**/*.*',
         php: 'src/*.php',
         libs: 'vendor/**/*',
@@ -69,24 +69,24 @@ var config = {
 };
 
 gulp.task('webserver', function () {
-    connect.server({hostname: '127.0.0.1', port: '9000', base: './build'}, function () {
+    return connect.server({hostname: '127.0.0.1', port: '9000', base: './build'}, function () {
         browserSync(config);
     })
 });
 
 gulp.task('clean', function (cb) {
-    rimraf(path.clean, cb);
+    return rimraf(path.clean, cb);
 });
 
 gulp.task('html:build', function () {
-    gulp.src(path.src.html)
+    return gulp.src(path.src.html)
         .pipe(rigger())
         .pipe(gulp.dest(path.build.html))
         .pipe(reload({stream: true}));
 });
 
 gulp.task('js:build', function () {
-    gulp.src(mainBowerFiles( { filter: "**/*.js",
+    return gulp.src(mainBowerFiles( { filter: "**/*.js",
         paths: {
             bowerDirectory: 'bower_components',
             bowerrc: '.bowerrc',
@@ -99,7 +99,7 @@ gulp.task('js:build', function () {
 });
 
 gulp.task('css:build', function () {
-    gulp.src(mainBowerFiles( { filter: "**/*.css",
+    return gulp.src(mainBowerFiles( { filter: "**/*.css",
         paths: {
             bowerDirectory: 'bower_components',
             bowerrc: '.bowerrc',
@@ -118,51 +118,42 @@ gulp.task('css:build', function () {
 });
 
 gulp.task('image:build', function () {
-    gulp.src(path.src.img)
+    return gulp.src(path.src.img)
         .pipe(changed(path.build.img))
-        .pipe(imagemin([
-            imagemin.gifsicle({interlaced: true}),
-            imagemin.jpegtran({progressive: true}),
-            imagemin.optipng({optimizationLevel: 5}),
-            imagemin.svgo({
-                plugins: [
-                    {removeViewBox: true},
-                    {cleanupIDs: false}
-                ]
-            })]))
+        .pipe(imagemin())
         .pipe(gulp.dest(path.build.img))
         .pipe(size({title: 'img'}))
         .pipe(reload({stream: true}));
 });
 
 gulp.task('fonts:build', function() {
-    gulp.src(path.src.fonts)
+    return gulp.src(path.src.fonts)
         .pipe(changed(path.build.fonts))
         .pipe(gulp.dest(path.build.fonts))
 });
 
 gulp.task('php:build', function () {
-    gulp.src(path.src.php)
+    return gulp.src(path.src.php)
         .pipe(changed(path.build.php))
         .pipe(gulp.dest(path.build.php))
         .pipe(reload({stream: true}))
 });
 
 gulp.task('templates:build', function () {
-    gulp.src(path.src.templates)
+    return gulp.src(path.src.templates)
         .pipe(changed(path.build.templates))
         .pipe(gulp.dest(path.build.templates))
         .pipe(reload({stream: true}))
 });
 
 gulp.task('libs:build', function () {
-    gulp.src(path.src.libs)
+    return gulp.src(path.src.libs)
         .pipe(changed(path.build.libs))
         .pipe(gulp.dest(path.build.libs))
 });
 
 gulp.task('build', function (cb) {
-    runSequence(
+    return runSequence(
         'html:build',
         'js:build',
         'css:build',
@@ -207,7 +198,21 @@ gulp.task('watch', function(){
     })
 });
 
-gulp.task('default', ['build', 'webserver', 'watch']);
+gulp.task('default', function (cb) {
+    return runSequence(
+        'build',
+        'webserver',
+        'watch',
+        function (error) {
+            if (error) {
+                console.log(error.message);
+            } else {
+                console.log('Gulp test environment run successfully');
+            }
+            cb(error);
+        }
+    )
+});
 
 gulp.task('github-release', function(done) {
     conventionalGithubReleaser({
@@ -237,14 +242,14 @@ gulp.task('minor-version', function () {
 });
 
 gulp.task('push-changes', function (cb) {
-    git.revParse({args:'--abbrev-ref HEAD'}, function (err, branch) {
+    return git.revParse({args:'--abbrev-ref HEAD'}, function (err, branch) {
         git.push('origin', branch, cb);
     });
 });
 
 gulp.task('create-new-tag', function (cb) {
     var version = getPackageJsonVersion();
-    git.tag(version, 'Created Tag for version: ' + version, function (error) {
+    return git.tag(version, 'Created Tag for version: ' + version, function (error) {
         if (error) {
             return cb(error);
         }
@@ -272,12 +277,12 @@ gulp.task('create-commit', function (cb) {
 });
 
 gulp.task('patch-release', function (callback) {
-    runSequence(
+    return runSequence(
         'patch-version',
         'create-commit',
         'push-changes',
         'create-new-tag',
-        'github-release',
+        // 'github-release',
         function (error) {
             if (error) {
                 console.log(error.message);
@@ -289,12 +294,12 @@ gulp.task('patch-release', function (callback) {
 });
 
 gulp.task('minor-release', function (callback) {
-    runSequence(
+    return runSequence(
         'minor-version',
         'create-commit',
         'push-changes',
         'create-new-tag',
-        'github-release',
+        // 'github-release',
         function (error) {
             if (error) {
                 console.log(error.message);
@@ -306,12 +311,12 @@ gulp.task('minor-release', function (callback) {
 });
 
 gulp.task('major-release', function (callback) {
-    runSequence(
+    return runSequence(
         'major-version',
         'create-commit',
         'push-changes',
         'create-new-tag',
-        'github-release',
+        // 'github-release',
         function (error) {
             if (error) {
                 console.log(error.message);
