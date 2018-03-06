@@ -15,7 +15,6 @@ var gulp = require('gulp'),
     reload = browserSync.reload,
     runSequence = require('run-sequence'),
     prompt = require('gulp-prompt'),
-    conventionalGithubReleaser = require('conventional-github-releaser'),
     bump = require('gulp-bump'),
     gutil = require('gulp-util'),
     git = require('gulp-git'),
@@ -214,15 +213,6 @@ gulp.task('default', function (cb) {
     )
 });
 
-gulp.task('github-release', function(done) {
-    conventionalGithubReleaser({
-        type: "oauth",
-        token: credentials.github_token
-    }, {
-        preset: 'angular'
-    }, done);
-});
-
 gulp.task('patch-version', function () {
     return gulp.src(['./bower.json', './package.json'])
         .pipe(bump({type: 'patch'}).on('error', gutil.log))
@@ -282,7 +272,6 @@ gulp.task('patch-release', function (callback) {
         'create-commit',
         'push-changes',
         'create-new-tag',
-        // 'github-release',
         function (error) {
             if (error) {
                 console.log(error.message);
@@ -299,7 +288,6 @@ gulp.task('minor-release', function (callback) {
         'create-commit',
         'push-changes',
         'create-new-tag',
-        // 'github-release',
         function (error) {
             if (error) {
                 console.log(error.message);
@@ -316,7 +304,6 @@ gulp.task('major-release', function (callback) {
         'create-commit',
         'push-changes',
         'create-new-tag',
-        // 'github-release',
         function (error) {
             if (error) {
                 console.log(error.message);
