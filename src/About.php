@@ -3,13 +3,13 @@ require_once 'vendor/autoload.php';
 
 $blocks = array(
     array(
-        'url' => 'Daniil.html',
+        'url' => 'Daniil.php',
         'name' => 'Даниил Пискарев',
         'img' => 'img/About/Photo1.jpg',
         'job' => 'Креативный директор'
     ),
     array(
-        'url' => 'Contacts.html',
+        'url' => 'Contacts.php',
         'name' => 'Константин Разинков',
         'img' => 'img/About/Photo2.jpg',
         'job' => 'IT-директор'
@@ -27,7 +27,7 @@ $blocks = array(
         'job' => 'Художница'
     ),
     array(
-        'url' => 'Alena.php',
+        'url' => '',
         'name' => 'Анастасия Суравнева',
         'img' => 'img/About/Photo5.jpg',
         'job' => 'Художница'

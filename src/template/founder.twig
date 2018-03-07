@@ -1,0 +1,31 @@
+{% extends 'base.twig' %}
+
+{% block title %}{{ founder.name }}{% endblock %}
+{% block keywords %}P-lacebo, {{ founder.name }}, основатель p-lacebo{% endblock %}
+{% block description %}Основатель p-lacebo - {{ founder.name }}{% endblock %}
+
+{% block content %}
+    <div class="title">
+        <span class="t001">
+            <i>Основатель P-lacebo - {{ founder.name }}</i>
+        </span>
+    </div>
+    <section class="content" style="margin-top: 7vw; text-align: center">
+        {% for description in founder.descriptions %}
+            <div class="description">
+                <span class="t0001" >
+                    {{ description.text }}
+                </span>
+            </div>
+            {% if description.img != '' %}
+                <div class="flex-block" style="margin-top: 3vw">
+                    <div class="block" >
+                        <div class="flex-parts">
+                            <img class="img1" src="{{ description.img }}">
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </section>
+{% endblock %}

@@ -1,0 +1,13 @@
+.mail-link {
+    color: black;
+}
+
+.mail-link:hover {
+    color: rgba(0, 0, 0, 0.5);
+}
+.mail-link a:visited {
+    color: black;
+}
+.mail-link a::selection {
+    color: black;
+}

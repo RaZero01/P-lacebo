@@ -28,12 +28,12 @@
 
 <body class="body">
 
-{% include 'header.twig' %}
+{{ include('header.html') }}
 
 {% block content %}
 {% endblock %}
 
-{% include 'footer.twig' %}
+{{ include('footer.html') }}
 </body>
 </html>
 {% endspaceless %}

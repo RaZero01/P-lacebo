@@ -48,7 +48,7 @@ var path = {
         fonts: 'src/fonts/**/*.*',
         php: 'src/*.php',
         libs: 'vendor/**/*',
-        templates: 'src/template/*.twig'
+        templates: 'src/template/*.{twig,html}'
     },
     watch: {
         html: 'src/**/*.html',
@@ -57,7 +57,7 @@ var path = {
         img: 'src/img/**/*.*',
         fonts: 'src/fonts/**/*.*',
         php: 'src/**/*.php',
-        templates: 'src/template/*.twig'
+        templates: 'src/template/*.{twig,html}'
     },
     clean: './build'
 };

@@ -27,7 +27,8 @@
                     <div class="description">
                 <span class="t0001">{% if partner.phone != '' %}Телефон: {{ partner.phone }}{% endif %}
                     {% if partner.email != '' and partner.phone != '' %}<br>{% endif %}
-                    {% if partner.email != '' %}Е-mail: {{ partner.email }}{% endif %}
+                    {% if partner.email != '' %}Е-mail: <a href="mailto:{{ partner.email }}" class="mail-link">
+                        {{ partner.email }}</a>{% endif %}
                 </span></div>
                 </div>
             </div>
