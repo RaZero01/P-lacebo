@@ -1,0 +1,15 @@
+<div class="block" {% if block.url !='' %}onclick="location.href='{{ block.url }}'"{% endif %}>
+    <div class="names-top">
+        <span>{{ block.name|nl2br }}</span></a>
+    </div>
+    <div class="flex-parts">
+        {% if block.url !='' %}<a href="{{ block.url }}">{% endif %}
+            <img class="img1" src="{{ block.img }}">
+            {% if block.url !='' %}</a>{% endif %}
+        {% if block.description %}
+            <div class="names-bottom">
+                <span>{{ block.description|nl2br }}</span></a>
+            </div>
+        {% endif %}
+    </div>
+</div>

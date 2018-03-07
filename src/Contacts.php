@@ -32,7 +32,7 @@ $contacts = array(
 );
 
 $loader = new Twig_Loader_Filesystem('template');
-$twig = new Twig_Environment($loader);
+$twig = new Twig_Environment($loader, array('cache' => 'cache'));
 
 $template = $twig->load('contacts.twig');
 echo $template->render(array('contacts' => $contacts, 'currentYear' => date("Y")));

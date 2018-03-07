@@ -315,7 +315,7 @@ gulp.task('major-release', function (callback) {
 });
 
 gulp.task('deploy', function (cb) {
-    return gulp.src('build/**/*')
+    return gulp.src(['build/**/*', '!build/cache', '!build/cache/**'])
         .pipe(sftp({
             host: credentials.host,
             user: credentials.ftp_user,

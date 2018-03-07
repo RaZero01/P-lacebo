@@ -25,7 +25,7 @@ $blocks = array(
 );
 
 $loader = new Twig_Loader_Filesystem('template');
-$twig = new Twig_Environment($loader);
+$twig = new Twig_Environment($loader, array('cache' => 'cache'));
 
 $template = $twig->load('index.twig');
 echo $template->render(array('blocks' => $blocks, 'currentYear' => date("Y")));

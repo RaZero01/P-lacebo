@@ -15,13 +15,7 @@
     <section class="content" style="margin-top: 4vw; text-align: center">
         <div class="flex-block">
             {% for block in blocks %}
-                <div class="block" onclick="location.href={{ block.url }}">
-                    <div class="names-top"><span>{{ block.name }}</span></div>
-                    <div class="flex-parts">
-                        <a class="img1" href='{{ block.url }}' title="">
-                            <img class="img1" src='{{ block.img }}'></a>
-                    </div>
-                </div>
+                {% include 'block.twig' %}
             {% endfor %}
         </div>
     </section>
