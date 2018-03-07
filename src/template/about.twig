@@ -1,4 +1,4 @@
-{% extends 'base.twig' %}
+{% extends 'collections.twig' %}
 
 {% block title %}О компании{% endblock %}
 {% block keywords %}p-lacebo, Даниил Пискарев, Команда P-lacebo{% endblock %}
@@ -6,20 +6,5 @@
 
 {% block content %}
     <div class="title"><span class="t001" style="text-align: left"><i>Наша команда:</i></span></div>
-    <section class="content" style=" text-align: center">
-        <div class="flex-block">
-            {% for block in blocks %}
-                <div class="block" {% if block.url != '' %} onclick="location.href='{{ block.url }}'"{% endif %}>
-                    <div class="names-top"><span>{{ block.name }}</span></div>
-                    <div class="flex-parts">
-                        {% if block.url != '' %}<a class="img1" href="{{ block.url }}" title="">{% endif %}
-                            <img class="img1" src="{{ block.img }}" width="80%">{% if block.url != '' %}</a>{% endif %}
-                    </div>
-                    <div class="names-bottom">
-                        <span>{{ block.job }}</span>
-                    </div>
-                </div>
-            {% endfor %}
-        </div>
-    </section>
+    {{ parent() }}
 {% endblock %}
