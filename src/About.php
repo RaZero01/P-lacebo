@@ -24,16 +24,16 @@ $blocks = array(
         'description' => 'Дизайнер'
     ),
     array(
-        'url' => 'Alena.php',
-        'name' => 'Алена Матвеева',
-        'img' => 'img/About/Photo4.jpg',
-        'description' => 'Художница'
-    ),
-    array(
         'url' => '',
         'name' => 'Анастасия Суравнева',
         'img' => 'img/About/Photo5.jpg',
         'description' => 'Художница'
+    ),
+    array(
+        'url' => 'Contacts.php',
+        'name' => 'Иван Соколовский',
+        'img' => 'img/About/Photo8.jpg',
+        'description' => 'Техническая поддержка'
     ),
     array(
         'url' => 'Igor.php',
