@@ -1,0 +1,48 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+    <div class="title"><span class="t001" ><i>{{ collection.title }}</i></span></div>
+    <div class="description"><span class="t0001">{{ collection.description | nl2br }}</span></div>
+
+    {% if collection.partner_name != '' %}
+    <section class="content" style="margin-bottom:20px; text-align: center">
+        <div class="flex-block">
+            <div class="block" onclick="location.href='{{ collection.partner_url }}'">
+                <div class="names-top"><span>{{ collection.partner_job }}</span></div>
+                <div class="flex-parts">
+                    <a class="img1" href="{{ collection.partner_url }}" title="">
+                        <img class="img1" src="{{ collection.partner_img }}" width="80%"></a>
+                </div>
+                <div class="names-bottom">
+                    <span>{{ collection.partner_name | nl2br }}</span></span>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+    <section class="content" style=" text-align: center">
+        <div class="flex-block">
+            {% for item in collection.items %}
+            <div class="block">
+                {% set id = loop.index %}
+                <div class="flex-parts">
+                {% for slide in item.slides %}
+                    <a data-fancybox="gallery{{ id }}"
+                       data-caption='<div class="p1 t76" style="text-align: left;"><span class="t01">{{ slide.caption_title | nl2br }}<br></span>
+                       <span class="t0">{{ slide.caption_description | nl2br }}</span></div>'
+                       href="{{ slide.img }}">
+                {% endfor %}
+                    <img class="img1" src="{{ item.img }}">
+                {% for slide in item.slides %}
+                    </a>
+                {% endfor %}
+                </div>
+                <div class="names-bottom">
+                    <span>{{ item.title | nl2br }}</span>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

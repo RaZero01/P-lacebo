@@ -18,7 +18,7 @@ $blocks = array(
         'description' => 'Чехлы для смартфонов'
     ),
     array(
-        'url' => 'Jewelry.html',
+        'url' => 'Jewelry.php',
         'name' => "ЮВЕЛИРНЫЕ\nУКРАШЕНИЯ",
         'img' => 'img/Accessories/Jewelry/Group%20Photo.jpg',
         'description' => "Коллекция\n«BIO-Jewelry»"
