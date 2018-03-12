@@ -27,9 +27,12 @@ $founder = array(
         )
     )
 );
+$title = $founder['name'];
+$keywords = array('Основатель', $founder['name'], 'P-lacebo');
+$description = 'Основатель P-lacebo, биолог и дизайнер '.$founder['name'];
 
 $loader = new Twig_Loader_Filesystem('template');
-$twig = new Twig_Environment($loader, array('cache' => 'cache'));
+$twig = new Twig_Environment($loader, array('cache' => 'cache', 'auto_reload' => true));
 
 $template = $twig->load('founder.twig');
-echo $template->render(array('founder' => $founder, 'currentYear' => date("Y")));
+echo $template->render(array('founder' => $founder,  'title' => $title, 'keywords' => $keywords, 'description' => $description));

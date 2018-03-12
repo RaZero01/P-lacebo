@@ -13,9 +13,12 @@ $partner = array(
     'description' => "Инга Крупельницкая - дизайнер машинной вышивки.
         До занятия вышивкой Инга шила на заказ одежду и была уверена, что это дело всей ее жизни... Но наступил момент и  она кардинально все поменяла - с нуля занялась машинной вышивкой. И  это занятие Инге безумно нравится! Ведь  оно приносит радость ее заказчикам, которые видят, как могут преобразиться обычные вещи при помощи вышивки. И даже самое обычное изделие с именной вышивкой становится уникальным подарком!"
 );
+$title = $partner['name'];
+$keywords = array('Дизайнер', $partner['name'], 'P-lacebo');
+$description = $partner['title'];
 
 $loader = new Twig_Loader_Filesystem('template');
-$twig = new Twig_Environment($loader, array('cache' => 'cache'));
+$twig = new Twig_Environment($loader, array('cache' => 'cache', 'auto_reload' => true));
 
 $template = $twig->load('partner.twig');
-echo $template->render(array('partner' => $partner, 'currentYear' => date("Y")));
+echo $template->render(array('partner' => $partner, 'title' => $title, 'keywords' => $keywords, 'description' => $description));

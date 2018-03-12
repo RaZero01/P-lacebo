@@ -1,6 +1,9 @@
 <?php
 require_once 'vendor/autoload.php';
 
+$title = 'ART';
+$keywords = array('ART', 'Картины', 'P-lacebo');
+$description = 'Картины P-lacebo';
 $blocks = array(
     array(
         'url' => 'God Inside Us.html',
@@ -41,7 +44,7 @@ $blocks = array(
 );
 
 $loader = new Twig_Loader_Filesystem('template');
-$twig = new Twig_Environment($loader, array('cache' => 'cache'));
+$twig = new Twig_Environment($loader, array('cache' => 'cache', 'auto_reload' => true));
 
 $template = $twig->load('collections.twig');
-echo $template->render(array('blocks' => $blocks, 'currentYear' => date("Y")));
+echo $template->render(array('blocks' => $blocks, 'title' => $title, 'keywords' => $keywords, 'description' => $description));

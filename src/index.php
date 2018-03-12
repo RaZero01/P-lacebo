@@ -1,6 +1,9 @@
 <?php
 require_once 'vendor/autoload.php';
 
+$title = 'P-lacebo';
+$keywords = array('P-lacebo', 'P-lacebo.com', 'Дизайнер Даниил Пискарёв');
+$description = 'Сайт дизайнера Даниила Пискарёва P-lacebo.com';
 $blocks = array(
     array(
         'url' => 'ART.php',
@@ -23,9 +26,11 @@ $blocks = array(
         'img' => 'img/Clothes/Bio%20polo/Group%20Photo.jpg'
     )
 );
+$slides = array('img/Slide1.jpg');
 
 $loader = new Twig_Loader_Filesystem('template');
-$twig = new Twig_Environment($loader, array('cache' => 'cache'));
+$twig = new Twig_Environment($loader, array('cache' => 'cache', 'auto_reload' => true));
 
 $template = $twig->load('index.twig');
-echo $template->render(array('blocks' => $blocks, 'currentYear' => date("Y")));
+echo $template->render(array('blocks' => $blocks, 'title' => $title, 'keywords' => $keywords, 'description' => $description,
+    'slides' => $slides));

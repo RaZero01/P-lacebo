@@ -18,9 +18,12 @@ $partner = array(
     ● Очень большой коллектив, в котором есть как ювелиры, разного профиля так и околоювелирные специалисты(огранщики камней, гемологи, оценщики, эмальеры, модельеры, 3д модельеры, литейщики, восковщики, резинщики и т.д.)
     ● Четко прописанные цены на большинство популярных работ."
 );
+$title = $partner['name'];
+$keywords = array('Русская Ювелирная Мастерская', $partner['name'], 'P-lacebo');
+$description = $partner['title'];
 
 $loader = new Twig_Loader_Filesystem('template');
-$twig = new Twig_Environment($loader, array('cache' => 'cache'));
+$twig = new Twig_Environment($loader, array('cache' => 'cache', 'auto_reload' => true));
 
 $template = $twig->load('partner.twig');
-echo $template->render(array('partner' => $partner, 'currentYear' => date("Y")));
+echo $template->render(array('partner' => $partner, 'title' => $title, 'keywords' => $keywords, 'description' => $description));
