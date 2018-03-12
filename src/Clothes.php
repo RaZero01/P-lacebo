@@ -6,7 +6,7 @@ $keywords = array('Одежда', 'P-lacebo');
 $description = 'Одежда P-lacebo';
 $blocks = array(
     array(
-        'url' => 'Bio-polo.html',
+        'url' => 'Bio-polo.php',
         'name' => 'РУБАШКИ-ПОЛО',
         'img' => 'img/Clothes/Bio%20polo/Group%20Photo.jpg',
         'description' => "Коллекция «Bio-Polo»"

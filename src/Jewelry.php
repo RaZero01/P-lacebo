@@ -17,6 +17,10 @@ $collection = array(
     'partner_url' => 'Andrey.php',
     'partner_job' => 'Творческий партнер',
     'partner_img' => 'img/Accessories/Jewelry/Partner.jpg',
+    'partner_bottom_name' => "",
+    'partner_bottom_url' => '',
+    'partner_bottom_job' => '',
+    'partner_bottom_img' => '',
     'items' => array(
         array(
             'slides' => array(

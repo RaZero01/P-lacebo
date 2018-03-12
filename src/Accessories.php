@@ -12,7 +12,7 @@ $blocks = array(
         'description' => "Коллекция\n«Bio umbrella»"
     ),
     array(
-        'url' => 'Cases.html',
+        'url' => 'Cases.php',
         'name' => "ЧЕХЛЫ\nДЛЯ СМАРТФОНОВ",
         'img' => 'img/Accessories/Cases/Group%20Photo.jpg',
         'description' => 'Чехлы для смартфонов'

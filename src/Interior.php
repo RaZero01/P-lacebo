@@ -6,13 +6,13 @@ $keywords = array('Предметы интерьера', 'P-lacebo');
 $description = 'Предметы интерьера P-lacebo';
 $blocks = array(
     array(
-        'url' => 'Bio pillow.html',
+        'url' => 'Bio pillow.php',
         'name' => 'ПОДУШКИ',
         'img' => 'img/Interior/Bio%20pillow/Group%20Photo.jpg',
         'description' => "Коллецкия «Bio pillow»"
     ),
     array(
-        'url' => 'Bio magnets.html',
+        'url' => 'Bio magnets.php',
         'name' => "МАГНИТЫ",
         'img' => 'img/Interior/Magnets/Group%20Photo.jpg',
         'description' => "Коллекция «Bio magnets»"

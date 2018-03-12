@@ -4,18 +4,11 @@
     <section class="content" style="margin-top: 13vw; text-align: center">
         <div class="flex-block">
             {% for block in blocks %}
-                <div class="block">
-                    <div class="flex-parts">
-                        <a data-fancybox="gallery{{ loop.index }}"
-                           data-caption=''
-                           href="{{ block.img }}">
-                            <img class="img1" src="{{ block.img }}">
-                        </a>
-                        <div class="names-bottom">
-                            <span>{{ block.name | nl2br }}</span>
-                        </div>
-                    </div>
-                </div>
+                {% set id = loop.index %}
+                {% set img = block.img %}
+                {% set title = block.name %}
+                {% set slides = [block] %}
+                {% include 'fancybox-slides.twig' %}
             {% endfor %}
         </div>
     </section>

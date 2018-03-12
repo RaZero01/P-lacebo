@@ -18,13 +18,13 @@ $blocks = array(
         'description' => "Коллекция\n«Мир белков внутри нас»"
     ),
     array(
-        'url' => 'Bas-relief.html',
+        'url' => 'Bas-relief.php',
         'name' => "ФОТОКАРТИНЫ",
         'img' => 'img/Bas-relief/Group%20Photo.jpg',
         'description' => "Коллекция\n«Bio Bas-relief»"
     ),
     array(
-        'url' => 'Bio Shuimohua.html',
+        'url' => 'Bio Shuimohua.php',
         'name' => "КАРТИНЫ НА ХОЛСТЕ",
         'img' => 'img/Bio%20Shuimohua/Group%20Photo.jpg',
         'description' => "Коллекция\n«Bio Shuimohua»"
