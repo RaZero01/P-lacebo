@@ -33,7 +33,7 @@ $blocks = array(
         'url' => 'Contacts.php',
         'name' => 'Иван Соколовский',
         'img' => 'img/About/Photo8.jpg',
-        'description' => 'Техническая поддержка'
+        'description' => 'Системный администратор'
     ),
     array(
         'url' => 'Igor.php',
