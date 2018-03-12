@@ -17,7 +17,7 @@ $blocks = array(
     ),
     array(
         'url' => 'Interior.php',
-        'name' => 'ПРЕДМЕТЫ ИНТЕРЬЕРА',
+        'name' => "ПРЕДМЕТЫ\nИНТЕРЬЕРА",
         'img' => 'img/Interior/Bio%20pillow/Group%20Photo.jpg'
     ),
     array(
