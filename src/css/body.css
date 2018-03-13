@@ -19,11 +19,17 @@
 
 
 .img1{
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    border-width: 3px;
+    border-style: solid;
+    border-color: darkgrey;
     width: 21vw;
     text-align: center;
     min-width: 30vh;
 }
-
+.img1:hover{
+    border-color: darkred;
+}
 .description{
     margin: 5% 3% 0 3%;
     text-align: justify;
