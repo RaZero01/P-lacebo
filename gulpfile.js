@@ -18,8 +18,6 @@ var gulp = require('gulp'),
     bump = require('gulp-bump'),
     gutil = require('gulp-util'),
     git = require('gulp-git'),
-    credentials = require('./credentials.json'),
-    sftp = require('gulp-sftp'),
     size = require('gulp-size'),
     changed = require('gulp-changed'),
     connect = require('gulp-connect-php'),
@@ -27,7 +25,7 @@ var gulp = require('gulp'),
 
 require('gulp-task-list')(gulp, ['html:build', 'css:build', 'libs:build', 'php:build', 'templates:build', 'image:build',
     'fonts:build', 'js:build', 'github-release', 'watch', 'webserver', 'patch-version', 'minor-version',
-    'major-version', 'push-changes', 'create-new-tag', 'create-commit']);
+    'major-version', 'push-changes', 'create-new-tag', 'create-commit', 'htaccess:build']);
 
 var path = {
     build: {
@@ -38,7 +36,8 @@ var path = {
         fonts: 'build/fonts/',
         php: 'build/',
         libs: 'build/vendor/',
-        templates: 'build/template/'
+        templates: 'build/template/',
+        htaccess: 'build/'
     },
     src: {
         html: 'src/*.html',
@@ -48,7 +47,8 @@ var path = {
         fonts: 'src/fonts/**/*.*',
         php: 'src/*.php',
         libs: 'vendor/**/*',
-        templates: 'src/template/*.{twig,html}'
+        templates: 'src/template/*.{twig,html}',
+        htaccess: '.htaccess'
     },
     watch: {
         html: 'src/**/*.html',
@@ -151,6 +151,12 @@ gulp.task('libs:build', function () {
         .pipe(gulp.dest(path.build.libs))
 });
 
+gulp.task('htaccess:build', function () {
+    return gulp.src(path.src.htaccess)
+        .pipe(changed(path.build.htaccess))
+        .pipe(gulp.dest(path.build.htaccess))
+});
+
 gulp.task('build', function (cb) {
     return runSequence(
         'html:build',
@@ -161,6 +167,7 @@ gulp.task('build', function (cb) {
         'libs:build',
         'fonts:build',
         'image:build',
+        'htaccess:build',
         function (error) {
             if (error) {
                 console.log(error.message);
@@ -312,14 +319,4 @@ gulp.task('major-release', function (callback) {
             }
             callback(error);
         });
-});
-
-gulp.task('deploy', function (cb) {
-    return gulp.src(['build/**/*', '!build/cache', '!build/cache/**'])
-        .pipe(sftp({
-            host: credentials.host,
-            user: credentials.ftp_user,
-            pass: credentials.ftp_password,
-            remotePath: credentials.remote_path
-        }))
 });

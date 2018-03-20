@@ -1,14 +1,10 @@
 {
   "name": "p-lacebo",
-  "version": "1.7.0",
+  "version": "1.7.1",
   "description": "p-lacebo.com website",
   "author": "Konstantin <Korazinkov@gmail.com>, Ivan <ivan3177@gmail.com>, Dmitriy <lirveez@gmail.com>",
   "license": "ISC",
   "repository": "git@github.com:RaZero01/P-lacebo.git",
-  "ftp_user": "razero",
-  "ftp_password": "19031997",
-  "host": "p-lacebo.com",
-  "remote_path": "p-lacebo-test",
   "devDependencies": {
     "browser-sync": "^2.23.6",
     "gulp": "^3.9.1",
@@ -29,7 +25,6 @@
     "gulp-cache": "^1.0.2",
     "gulp-size": "^3.0.0",
     "gulp-changed": "^3.2.0",
-    "gulp-sftp": "^0.1.5",
     "gulp-connect-php": "^1.0.3 ",
     "fs": "^0.0.1-security",
     "run-sequence": "^2.2.1",

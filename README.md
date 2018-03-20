@@ -3,11 +3,11 @@
 
 ## Authors
 - IT-Director, Front-end Developer - Konstantin Razinkov <korazinkov@gmail.com>
-- Project Manager, Front-end Developer, System Administrator - Ivan Sokolovskii <ivan3177@gmail.com>
+- Teamlead, Fullstack Developer - Ivan Sokolovskii <ivan3177@gmail.com>
 - Front-end Developer - Dmitriy Matushin <lirveez@gmail.com>
 
 ### Feedback
-For all questions feel free to contact project manager: \
+For all questions feel free to contact teamlead: \
 **Ivan Sokolovskii \
 <ivan3177@gmail.com> \
 Telegram: @ivan3177** \
@@ -24,14 +24,6 @@ Telegram: @RaZero01**
 * Run npm install to install required plugins
 * Run bower install to install dependencies
 * Run composer install to install required php libraries
-* Create credentials.json file like: \
-{ \
-    "ftp_user": "user", \
-    "ftp_password": "password", \
-    "host": "host", \
-    "remote_path": "path" \
-} \
-And replace it with your ftp access data.
 * Install bower, gulp and composer(requires php) globally \
 npm install -g gulp \
 npm install -g bower 
@@ -46,7 +38,6 @@ npm install -g composer
 - build(gitignored) - build result
 - bower_components(gitignored) - installed project dependencies
 - node_modules(gitignored) - installed plugins for gulp
-- credentials.json(gitignored) - personal programmer info for authorizations
 - vendor(gitignored) - libs for php
 
 ## Workflow
@@ -67,5 +58,3 @@ to make release.
 Gulp will prompt for commit message, automatically increment versions
 in package.json and bower.json, create tag for commit and push all to
 Github.
-
-To **deploy** built version to host use _gulp deploy_ command.
