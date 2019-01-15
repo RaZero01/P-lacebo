@@ -7,7 +7,7 @@
                 <span>{{ $category->name }}</span></a>
             </div>
             <div class="flex-parts">
-                <img class="img1" src="images/categories/{{ $category->image }}">
+                <img class="img1" src="{{ asset('storage/'.$category->image) }}">
             </div>
         </div>
         @endforeach

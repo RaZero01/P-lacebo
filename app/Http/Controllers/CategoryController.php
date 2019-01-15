@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use Illuminate\Http\Request;
-use App\Http\Requests\CategoryRequest;
+use Illuminate\Http\File;
 
 class CategoryController extends Controller
 {
@@ -28,22 +28,21 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CategoryRequest $request)
+    public function store(Request $request)
     {
-        if ($request->hasfile('image')) {
-            foreach ($request->file('image') as $image) {
-                $name = $image->getClientOriginalName();
-                $image->move(public_path().'/images/categories', $name);
-                $data[] = $name;
-            }
-        }
+        $request->validate([
+          'name' => 'required'
+        ]);
+
+        $path = \Storage::disk('public')->putFileAs('categories', new File($request->image->getRealPath()), $request->image->name);
 
         $category = new Category();
 
         $category->name = $request->name;
-        $category->filename = json_encode($data);
-
+        $category->image = $path;
         $category->save();
+
+        return back();
     }
 
     /**
