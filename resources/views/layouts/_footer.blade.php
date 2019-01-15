@@ -1,0 +1,4 @@
+<section class="footer" style="margin-top: 7vw">
+    <div style="text-align: center"><span>P-lacebo © 2017-{{ now()->year }}. All rights reserved.</span></div>
+    <div style="text-align: center"><a href="mailto:support@p-lacebo.com" class="mail-link">support{{ '@' }}p-lacebo.com</a></div>
+</section>

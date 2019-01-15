@@ -13,6 +13,6 @@ class CategorySeeder extends Seeder
     {
         \DB::table('categories')->delete();
 
-        factory(App\Category::class, 5)->create();
+        factory(App\Category::class, 4)->create();
     }
 }

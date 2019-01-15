@@ -1,5 +1,87 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
 
+.navbar-collapse {
+  padding-right: 5px;
+  padding-left: 5px;
+  overflow-x: visible;
+  -webkit-overflow-scrolling: touch;
+}
+
+.navbar-fixed-top {
+  top: 0;
+  z-index: 1030;
+  color: white;
+}
+
+.navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+
+.navbar .navbar-collapse {
+  text-align: center;
+}
+
+.navbar-header {
+  float: inherit;
+}
+
+.navbar {
+  position: center;
+  z-index: 1000;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+}
+
+.top-cover {
+  width: 100px;
+  height: 100px;
+  background-color: black;
+  margin-top: 15px;
+}
+
+.top-name {
+  display: block;
+  width: 100px;
+  max-height: 40px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.top-cover,
+.top-name {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.menu {
+  font: 100% "Georgia";
+  color: white;
+}
+
+.menu:hover {
+  color: grey;
+}
+
+body {
+  background-color: #939393;
+  /* IE9, iOS 3.2+ */
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0idnNnZyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjAlIj48c3RvcCBzdG9wLWNvbG9yPSIjYjliOWI5IiBzdG9wLW9wYWNpdHk9IjEiIG9mZnNldD0iMC4wMDIiLz48c3RvcCBzdG9wLWNvbG9yPSIjOWM5YzljIiBzdG9wLW9wYWNpdHk9IjEiIG9mZnNldD0iMC4xNTUiLz48c3RvcCBzdG9wLWNvbG9yPSIjOGI4YjhiIiBzdG9wLW9wYWNpdHk9IjEiIG9mZnNldD0iMC4yODYwMDAwMDAwMDAwMDAwMyIvPjxzdG9wIHN0b3AtY29sb3I9IiM4MTgxODEiIHN0b3Atb3BhY2l0eT0iMSIgb2Zmc2V0PSIwLjQwMSIvPjxzdG9wIHN0b3AtY29sb3I9IiM3ZjdmN2YiIHN0b3Atb3BhY2l0eT0iMSIgb2Zmc2V0PSIwLjUxMiIvPjxzdG9wIHN0b3AtY29sb3I9IiM4MTgxODEiIHN0b3Atb3BhY2l0eT0iMSIgb2Zmc2V0PSIwLjYzNCIvPjxzdG9wIHN0b3AtY29sb3I9IiM4YjhiOGIiIHN0b3Atb3BhY2l0eT0iMSIgb2Zmc2V0PSIwLjc1NCIvPjxzdG9wIHN0b3AtY29sb3I9IiM5YzljOWMiIHN0b3Atb3BhY2l0eT0iMSIgb2Zmc2V0PSIwLjg2NiIvPjxzdG9wIHN0b3AtY29sb3I9IiNiOWI5YjkiIHN0b3Atb3BhY2l0eT0iMSIgb2Zmc2V0PSIwLjk5NDAwMDAwMDAwMDAwMDEiLz48L2xpbmVhckdyYWRpZW50PjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjdnNnZykiIC8+PC9zdmc+);
+  /* Android 2.3 */
+  /* IE10+ */
+  background-image: linear-gradient(to right, #b9b9b9 0.2%, #9c9c9c 15.5%, #8b8b8b 28.6%, #818181 40.1%, #7f7f7f 51.2%, #818181 63.4%, #8b8b8b 75.4%, #9c9c9c 86.6%, #b9b9b9 99.4%);
+  background-image: -ms-linear-gradient(left, #b9b9b9 0.2%, #9c9c9c 15.5%, #8b8b8b 28.6%, #818181 40.1%, #7f7f7f 51.2%, #818181 63.4%, #8b8b8b 75.4%, #9c9c9c 86.6%, #b9b9b9 99.4%);
+}
+
+/* IE8- CSS hack */
+
+@media \0 screen\,screen\9 {
+  body {
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffb9b9b9",endColorstr="#ffb9b9b9",GradientType=1);
+  }
+}
+
 /*!
  * Font Awesome Free 5.6.3 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
@@ -16126,5 +16208,89 @@ a.text-dark:focus {
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.img1 {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  border-width: 3px;
+  border-style: solid;
+  border-color: darkgrey;
+  width: 21vw;
+  text-align: center;
+  min-width: 30vh;
+}
+
+.img1:hover {
+  border-color: darkred;
+}
+
+.flex-block {
+  display: inline-flex;
+  justify-content: center;
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  min-width: 30vh;
+}
+
+.flex-parts {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: 15px;
+  justify-content: center;
+  align-items: center;
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+  flex-direction: column;
+  align-content: center;
+  min-width: 30vh;
+}
+
+.block {
+  margin-right: 10px;
+  -webkit-transform: scale(1, 1);
+  -webkit-transition-timing-function: ease-out;
+  -webkit-transition-duration: 550ms;
+  -moz-transform: scale(1, 1);
+  -moz-transition-timing-function: ease-out;
+  -moz-transition-duration: 550ms;
+}
+
+.block:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.1, 1.1);
+  -webkit-transition-timing-function: ease-out;
+  -webkit-transition-duration: 550ms;
+  -moz-transform: scale(1.1, 1.1);
+  -moz-transition-timing-function: ease-out;
+  -moz-transition-duration: 550ms;
+}
+
+.names-top {
+  padding-top: 25px;
+  padding-bottom: 5px;
+  padding-left: 20px;
+  margin-right: 30px;
+  margin-top: 25px;
+  margin-bottom: 5px;
+  font: 2.3vh "Georgia";
+  color: black;
+  font-weight: 900;
+}
+
+.names-bottom {
+  padding-top: 5px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  margin-right: 30px;
+  margin-top: 5px;
+  margin-bottom: 25px;
+  font: 2vh "Georgia";
+  color: black;
+  font-weight: 900;
 }
 

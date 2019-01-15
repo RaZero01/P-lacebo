@@ -4,18 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use Illuminate\Http\Request;
+use App\Http\Requests\CategoryRequest;
 
 class CategoryController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    public function __construct()
     {
-        $categories = Category::all();
-        return view('categories.index', compact('categories'));
+        $this->middleware('auth', ['except' => ['index', 'show']]);
     }
 
     /**
@@ -33,14 +28,8 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CategoryRequest $request)
     {
-        $this->validate($request, [
-          'name' => 'required',
-          'image' => 'required',
-          'image.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
-        ]);
-
         if ($request->hasfile('image')) {
             foreach ($request->file('image') as $image) {
                 $name = $image->getClientOriginalName();

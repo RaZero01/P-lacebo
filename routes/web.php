@@ -1,5 +1,5 @@
 <?php
 
-Route::get('/', 'CategoryController@index');
+Route::get('/', 'HomeController@index')->name('home');
 
 Auth::routes();
