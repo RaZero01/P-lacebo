@@ -5,6 +5,10 @@
 
     RewriteEngine On
 
+    # Jino hosting forwarding
+    RewriteCond %{HTTP:X-Forwarded-Protocol} !=https
+    RewriteRule .* https://%{SERVER_NAME}%{REQUEST_URI} [R=301,L]
+
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
