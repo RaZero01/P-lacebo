@@ -26,5 +26,7 @@
         "vue": "^2.5.17",
         "vue-template-compiler": "^2.5.22"
     },
-    "dependencies": {}
+    "dependencies": {
+        "typeface-paytone-one": "0.0.54"
+    }
 }

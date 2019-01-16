@@ -1,15 +1,8 @@
-<section class="content" style="margin-top: 7vw; text-align: center">
-    <div class="flex-block">
-
-        @foreach($categories as $category)
-        <div class="block">
-            <div class="names-top">
-                <span>{{ $category->name }}</span></a>
-            </div>
-            <div class="flex-parts">
-                <img class="img1" src="{{ asset('storage/'.$category->image) }}">
-            </div>
-        </div>
-        @endforeach
+<section class="d-flex flex-row flex-wrap align-content-center align-items-center">
+    @foreach($categories as $category)
+    <div class="mx-auto py-2 px-auto category">
+        <h1 class="text-center mb-1">{{ $category->name }}</h1>
+        <img class="rounded img-fluid" src="{{ asset('storage/'.$category->image) }}">
     </div>
+    @endforeach
 </section>

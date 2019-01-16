@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-@include('categories._index', ['categories' => $categories])
+<div class="container">
+    @include('categories._index', ['categories' => $categories])
+</div>
 @endsection
