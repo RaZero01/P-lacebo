@@ -59,18 +59,21 @@ body {
 }
 
 .category {
-  transition: 0.4s ease-in-out;
-  -webkit-transition: all .5s ease-in-out;
-  -moz-transition: all .5s ease-in-out;
-  -o-transition: all .5s ease-in-out;
-  -ms-transition: all .5s ease-in-out;
-  width: 21vw;
-  min-width: 30vh;
-  max-width: 55vh;
+  transition: 0.55s ease-in-out;
+  -webkit-transition: all .55s ease-in-out;
+  -moz-transition: all .55s ease-in-out;
+  -o-transition: all .55s ease-in-out;
+  -ms-transition: all .55s ease-in-out;
+  min-width: 25vh;
+  max-width: 50vh;
 
   &:hover {
     cursor: pointer;
-    width: 21vw * 1.1;
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
   }
 
   & img {
