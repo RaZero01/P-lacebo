@@ -16,4 +16,14 @@ class Category extends Model
             Storage::disk('public')->delete($category->image);
         });
     }
+
+    public function getRouteAttribute()
+    {
+        return route('categories.show', $this->id);
+    }
+
+    public function getTitleAttribute()
+    {
+        return $this->name;
+    }
 }

@@ -7,10 +7,16 @@ use App\Category;
 
 class HomeController extends Controller
 {
-    public function index()
+    public function __construct()
     {
-        $categories = Category::all();
-        
-        return view('index', compact('categories'));
+        \View::composer(
+          'categories._index',
+          'App\Http\ViewComposers\CategoryComposer'
+        );
+    }
+
+    public function __invoke()
+    {
+        return view('home');
     }
 }

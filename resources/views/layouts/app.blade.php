@@ -22,12 +22,10 @@
 </head>
 
 <body>
-    <div id="app" class="h-100">
-        @include('layouts._header')
+    <div id="app">
+        @include('layouts._menu')
 
-        <main>
-            @yield('content')
-        </main>
+        @yield('content')
 
         @include('layouts._footer')
     </div>

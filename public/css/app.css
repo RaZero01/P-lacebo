@@ -1,69 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
 
-.navbar-collapse {
-  padding-right: 5px;
-  padding-left: 5px;
-  overflow-x: visible;
-  -webkit-overflow-scrolling: touch;
-}
-
-.navbar-fixed-top {
-  top: 0;
-  z-index: 1030;
-  color: white;
-}
-
-.navbar .navbar-nav {
-  display: inline-block;
-  float: none;
-  vertical-align: top;
-}
-
-.navbar .navbar-collapse {
-  text-align: center;
-}
-
-.navbar-header {
-  float: inherit;
-}
-
-.navbar {
-  position: center;
-  z-index: 1000;
-  margin-bottom: 20px;
-  border: 1px solid transparent;
-}
-
-.top-cover {
-  width: 100px;
-  height: 100px;
-  background-color: black;
-  margin-top: 15px;
-}
-
-.top-name {
-  display: block;
-  width: 100px;
-  max-height: 40px;
-  overflow: hidden;
-  text-align: center;
-}
-
-.top-cover,
-.top-name {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.menu {
-  font: 100% "Georgia";
-  color: white;
-}
-
-.menu:hover {
-  color: grey;
-}
-
 body {
   background-color: #939393;
   /* IE9, iOS 3.2+ */
@@ -16219,8 +16155,75 @@ html {
 body {
   position: relative;
   margin: 0;
-  padding-bottom: 6rem;
+  padding-bottom: 5rem;
   min-height: 100%;
+}
+
+.navbar {
+  background-color: #000;
+}
+
+.navbar .navbar-nav .nav-link {
+  color: white;
+}
+
+.navbar .navbar-nav .nav-link:hover {
+  color: grey;
+}
+
+.navbar .navbar-nav .nav-link.disabled {
+  color: gray;
+}
+
+.navbar .navbar-brand > img {
+  max-height: 120px;
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .navbar .navbar-brand > img {
+    max-height: 80px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .navbar .navbar-brand > img {
+    max-height: 60px;
+  }
+}
+
+.navbar .dropdown-menu {
+  background-color: #333333;
+}
+
+.navbar .dropdown-item:hover {
+  background-color: #4d4d4d;
+}
+
+.navbar .nav-link {
+  font-size: 12pt;
+  height: 100%;
+}
+
+.navbar .nav-link.dropdown-toggle {
+  cursor: pointer;
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .navbar .nav-link {
+    font-size: 10pt;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .navbar .nav-link {
+    font-size: 14pt;
+  }
+}
+
+@media (min-width: 1200px) {
+  .navbar .nav-link {
+    font-size: 16pt;
+  }
 }
 
 .footer {
@@ -16257,8 +16260,13 @@ body {
   -moz-transition: all 0.55s ease-in-out;
   -o-transition: all 0.55s ease-in-out;
   -ms-transition: all 0.55s ease-in-out;
+  width: 21vw;
   min-width: 25vh;
   max-width: 50vh;
+}
+
+.category a {
+  text-decoration: none;
 }
 
 .category:hover {
@@ -16275,6 +16283,9 @@ body {
   border-width: 3px;
   border-style: solid;
   border-color: darkgrey;
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 100%;
 }
 
 .category img:hover {

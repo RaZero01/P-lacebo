@@ -2,6 +2,6 @@
 
 @section('content')
 <div class="container">
-    @include('categories._index', ['categories' => $categories])
+    @include('categories._index')
 </div>
 @endsection

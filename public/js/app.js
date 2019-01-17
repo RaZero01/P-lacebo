@@ -37082,6 +37082,20 @@ module.exports = function(module) {
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 __webpack_require__(/*! typeface-paytone-one */ "./node_modules/typeface-paytone-one/index.css");
+/**
+ * Menu dropdown toggle on hover
+ */
+
+
+$('div.navbar-nav div.dropdown').hover(function () {
+  if ($(window).width() > 767) {
+    $(this).find('.dropdown-menu').show();
+  }
+}, function () {
+  if ($(window).width() > 767) {
+    $(this).find('.dropdown-menu').hide().css('display', '');
+  }
+});
 
 /***/ }),
 

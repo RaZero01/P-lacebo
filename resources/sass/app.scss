@@ -4,7 +4,6 @@
 // Variables
 @import "variables";
 
-@import "menu";
 @import "body";
 
 //FontAwesome
@@ -30,8 +29,68 @@ html {
 body {
   position: relative;
   margin: 0;
-  padding-bottom: 6rem;
+  padding-bottom: 5rem;
   min-height: 100%;
+}
+
+.navbar {
+  .navbar-nav .nav-link {
+    color: white;
+
+    &:hover {
+      color: grey;
+    }
+
+    &.disabled {
+      color: darken(white, 50);
+    }
+  }
+
+  .navbar-brand > img {
+    max-height: 120px;
+
+    @include media-breakpoint-only(sm) {
+      max-height: 80px;
+    }
+
+
+    @include media-breakpoint-only(xs) {
+      max-height: 60px;
+    }
+  }
+
+  background-color: $black;
+
+  .dropdown-menu {
+    background-color: lighten($black, 20);
+  }
+
+  .dropdown-item:hover {
+    background-color: lighten($black, 30);
+  }
+
+  .nav-link {
+    font-size: 12pt;
+    height: 100%;
+
+    &.dropdown-toggle {
+      cursor: pointer;
+    }
+
+    @include media-breakpoint-only(md) {
+      font-size: 10pt;
+    }
+
+
+    @include media-breakpoint-only(lg) {
+      font-size: 14pt;
+    }
+
+
+    @include media-breakpoint-only(xl) {
+      font-size: 16pt;
+    }
+  }
 }
 
 .footer {
@@ -64,8 +123,13 @@ body {
   -moz-transition: all .55s ease-in-out;
   -o-transition: all .55s ease-in-out;
   -ms-transition: all .55s ease-in-out;
+  width: 21vw;
   min-width: 25vh;
   max-width: 50vh;
+
+  a {
+    text-decoration: none;
+  }
 
   &:hover {
     cursor: pointer;
@@ -81,6 +145,8 @@ body {
     border-width: 3px;
     border-style: solid;
     border-color: darkgrey;
+    object-fit: contain;
+    width: 100%;
 
     &:hover {
       border-color: darkred;
