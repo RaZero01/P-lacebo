@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Collection extends Model
 {
-    protected $fillable = ['title', 'image'];
+    protected $fillable = ['title', 'name', 'image'];
 
     public static function boot()
     {

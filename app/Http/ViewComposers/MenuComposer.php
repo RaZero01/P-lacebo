@@ -24,21 +24,6 @@ class MenuComposer
     private $collection;
 
     /**
-     * @var Translator
-     */
-    private $translator;
-
-    /**
-     * @var UrlGenerator
-     */
-    private $urlGenerator;
-
-    /**
-     * @var Router
-     */
-    private $router;
-
-    /**
      * Create a menu composer.
      *
      * @return void
@@ -46,9 +31,6 @@ class MenuComposer
     public function __construct(Collection $collection, Translator $translator, UrlGenerator $urlGenerator, Router $router)
     {
         $this->collection = $collection;
-        $this->translator = $translator;
-        $this->urlGenerator = $urlGenerator;
-        $this->router = $router;
 
         static::$items = [
           [

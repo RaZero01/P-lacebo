@@ -16254,7 +16254,8 @@ body {
   color: black;
 }
 
-.category {
+.category,
+.collection {
   transition: 0.55s ease-in-out;
   -webkit-transition: all 0.55s ease-in-out;
   -moz-transition: all 0.55s ease-in-out;
@@ -16265,11 +16266,20 @@ body {
   max-width: 50vh;
 }
 
-.category a {
+.category *,
+.collection * {
+  font-family: "Paytone-one";
+  color: black;
+  font-weight: 800;
+}
+
+.category a,
+.collection a {
   text-decoration: none;
 }
 
-.category:hover {
+.category:hover,
+.collection:hover {
   cursor: pointer;
   transform: scale(1.1);
   -webkit-transform: scale(1.1);
@@ -16278,7 +16288,8 @@ body {
   -ms-transform: scale(1.1);
 }
 
-.category img {
+.category img,
+.collection img {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   border-width: 3px;
   border-style: solid;
@@ -16288,13 +16299,8 @@ body {
   width: 100%;
 }
 
-.category img:hover {
+.category img:hover,
+.collection img:hover {
   border-color: darkred;
-}
-
-.category h1 {
-  font-family: "Paytone-one";
-  color: black;
-  font-weight: semi-bold;
 }
 

@@ -18,6 +18,7 @@ class CreateCollectionsTable extends Migration
             $table->string('title');
             $table->string('slug')->unique();
             $table->string('image');
+            $table->string('name');
             $table->unsignedInteger('category_id');
             $table->timestamps();
 

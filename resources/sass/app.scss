@@ -117,7 +117,7 @@ body {
   }
 }
 
-.category {
+.category, .collection {
   transition: 0.55s ease-in-out;
   -webkit-transition: all .55s ease-in-out;
   -moz-transition: all .55s ease-in-out;
@@ -126,6 +126,12 @@ body {
   width: 21vw;
   min-width: 25vh;
   max-width: 50vh;
+
+  & * {
+    font-family: "Paytone-one";
+    color: black;
+    font-weight: 800;
+  }
 
   a {
     text-decoration: none;
@@ -151,11 +157,5 @@ body {
     &:hover {
       border-color: darkred;
     }
-  }
-
-  & h1 {
-    font-family: "Paytone-one";
-    color: black;
-    font-weight: semi-bold;
   }
 }

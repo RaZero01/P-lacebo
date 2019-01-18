@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Storage;
 
 $factory->define(App\Category::class, function (Faker $faker) {
     return [
-        'title' => rtrim($faker->sentence(1), "."),
+        'title' => rtrim($faker->realText(15, 1), "."),
         'image' => Storage::disk('public')->putFile('categories', new File($faker->image())),
     ];
 });

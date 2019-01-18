@@ -3,7 +3,7 @@
         <button class="btn navbar-btn btn-secondary navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fas fa-bars fa-lg"></i>
         </button>
-        <a href="{{ route('home') }}" class="navbar-brand mx-auto">
+        <a class="navbar-brand mx-auto">
             <img class="img-fluid" src="{{ $logo }}">
         </a>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
