@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
-@section('content')
+@section('pageTitle', $category->title)
 
+@section('content')
 @endsection
