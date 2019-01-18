@@ -14,12 +14,12 @@
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ $item->title }}</a>
                     <div class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
                         @foreach ($item->dropdown_items as $dropdown_item)
-                        <a class="dropdown-item nav-link {{ Request::url() == $dropdown_item->route ? 'disabled' : '' }}" href="{{ $dropdown_item->route }}">{{ $dropdown_item->title }}</a>
+                        <a class="dropdown-item nav-link {{ Request::url() == $dropdown_item->url ? 'disabled' : '' }}" href="{{ $dropdown_item->url }}">{{ $dropdown_item->title }}</a>
                         @endforeach
                     </div>
                 </div>
                 @else
-                <a class="nav-item nav-link mx-1 my-0 {{ Route::is($item->route) ? 'disabled' : '' }}" href="{{ route($item->route) }}">{{ $item->title }}</a>
+                <a class="nav-item nav-link mx-1 my-auto {{ Route::is($item->url) ? 'disabled' : '' }}" href="{{ route($item->url) }}">{{ $item->title }}</a>
                 @endif
                 @endforeach
             </div>

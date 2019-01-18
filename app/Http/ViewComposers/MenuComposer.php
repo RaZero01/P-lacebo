@@ -52,28 +52,28 @@ class MenuComposer
 
         static::$items = [
           [
-              'title' => 'ГЛАВНАЯ',
-              'route' => 'home'
+              'title' => 'Главная',
+              'url' => 'home'
           ],
           [
-              'title' => 'КАТЕГОРИИ',
+              'title' => 'Категории',
               'dropdown_items' => Category::all()
           ],
           [
-              'title' => 'О КОМПАНИИ',
-              'route' => 'empty'
+              'title' => 'О компании',
+              'url' => 'empty'
           ],
           [
-              'title' => 'ПАРТНЕРЫ',
-              'route' => 'empty'
+              'title' => 'Партнёры',
+              'url' => 'empty'
           ],
           [
-              'title' => 'СОБЫТИЯ',
-              'route' => 'empty'
+              'title' => 'События',
+              'url' => 'empty'
           ],
           [
-              'title' => 'КОНТАКТЫ',
-              'route' => 'empty'
+              'title' => 'Контакты',
+              'url' => 'empty'
           ],
         ];
     }
@@ -89,7 +89,7 @@ class MenuComposer
         foreach (static::$items as $item) {
             $this->collection->push((object)[
               'title' => $item['title'],
-              'route' => array_key_exists('route', $item) ? $item['route'] : null,
+              'url' => array_key_exists('url', $item) ? $item['url'] : null,
               'dropdown_items' => array_key_exists('dropdown_items', $item) ? $item['dropdown_items'] : null,
             ]);
         }

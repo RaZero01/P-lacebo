@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
+class Collection extends Model
 {
     protected $fillable = ['title', 'image'];
 
@@ -12,8 +12,8 @@ class Category extends Model
     {
         parent::boot();
 
-        static::deleted(function ($category) {
-            Storage::disk('public')->delete($category->image);
+        static::deleted(function ($collection) {
+            Storage::disk('public')->delete($collection->image);
         });
     }
 
@@ -22,9 +22,9 @@ class Category extends Model
         return 'slug';
     }
 
-    public function collections()
+    public function category()
     {
-        return $this->hasMany(Collection::class);
+        return $this->belongsTo(Category::class);
     }
 
     public function setTitleAttribute($value)
@@ -35,6 +35,6 @@ class Category extends Model
 
     public function getUrlAttribute()
     {
-        return route('categories.show', $this);
+        return route('categories.collections.show', [$this->category, $this]);
     }
 }
