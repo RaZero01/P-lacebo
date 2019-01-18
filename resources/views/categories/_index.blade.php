@@ -2,7 +2,7 @@
     @foreach($categories as $category)
     <div class="mx-auto py-2 px-auto category">
         <a href="{{ $category->route }}">
-            <h1 class="text-center mb-1">{{ $category->name }}</h1>
+            <h1 class="text-center mb-1">{{ $category->title }}</h1>
             <img class="rounded img-fluid" src="{{ asset('storage/'.$category->image) }}">
         </a>
     </div>

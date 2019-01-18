@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-    protected $fillable = ['name', 'image'];
+    protected $fillable = ['title', 'image'];
 
     public static function boot()
     {
@@ -17,13 +17,14 @@ class Category extends Model
         });
     }
 
-    public function getRouteAttribute()
+    public function setTitleAttribute($value)
     {
-        return route('categories.show', $this->id);
+        $this->attributes['title'] = $value;
+        $this->attributes['slug'] = str_slug($value);
     }
 
-    public function getTitleAttribute()
+    public function getRouteAttribute()
     {
-        return $this->name;
+        return route('categories.show', $this->slug);
     }
 }
