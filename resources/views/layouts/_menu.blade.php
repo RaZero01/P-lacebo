@@ -9,7 +9,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="navbar-nav">
                 @foreach ($menu_items as $item)
-                @if (!is_null($item->dropdown_items))
+                @if (!is_null($item->dropdown_items) && ($item->dropdown_items->count() > 0))
                 <div class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ $item->title }}</a>
                     <div class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
@@ -18,7 +18,7 @@
                         @endforeach
                     </div>
                 </div>
-                @else
+                @elseif (!is_null($item->url))
                 <a class="nav-item nav-link mx-1 my-auto {{ Route::is($item->url) ? 'disabled' : '' }}" href="{{ route($item->url) }}">{{ $item->title }}</a>
                 @endif
                 @endforeach

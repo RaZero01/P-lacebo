@@ -3,6 +3,10 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use App\Category;
+use App\Collection;
+use App\Observers\CategoryObserver;
+use App\Observers\CollectionObserver;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,7 +17,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Category::observe(CategoryObserver::class);
+        Collection::observe(CollectionObserver::class);
     }
 
     /**

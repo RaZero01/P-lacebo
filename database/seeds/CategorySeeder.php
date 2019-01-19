@@ -18,7 +18,7 @@ class CategorySeeder extends Seeder
         \Storage::disk('public')->deleteDirectory('collections');
 
         factory(App\Category::class, 4)->create()->each(function ($c) {
-            $c->collections()->saveMany(factory(App\Collection::class, rand(2, 5))->make());
+            $c->collections()->saveMany(factory(App\Collection::class, rand(1, 3))->make());
         });
     }
 }

@@ -3,5 +3,5 @@
 @section('pageTitle', $category->title)
 
 @section('content')
-@include('collections._index', ['collections' => $category->collections])
+@include('shared._layout-items', ['model' => $category->collections])
 @endsection

@@ -6,30 +6,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class Collection extends Model
 {
+    use Traits\SlugRouteTrait;
+
     protected $fillable = ['title', 'name', 'image'];
-
-    public static function boot()
-    {
-        parent::boot();
-
-        static::deleted(function ($collection) {
-            Storage::disk('public')->delete($collection->image);
-        });
-    }
-
-    public function getRouteKeyName()
-    {
-        return 'slug';
-    }
 
     public function category()
     {
         return $this->belongsTo(Category::class);
     }
 
-    public function setTitleAttribute($value)
+    public function setNameAttribute($value)
     {
-        $this->attributes['title'] = $value;
+        $this->attributes['name'] = $value;
         $this->attributes['slug'] = str_slug($value);
     }
 

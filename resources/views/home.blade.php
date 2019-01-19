@@ -4,6 +4,6 @@
 
 @section('content')
 <div class="container">
-    @include('categories._index')
+    @include('shared._layout-items', ['model' => $categories])
 </div>
 @endsection
