@@ -7,24 +7,14 @@ use App\Category;
 class CategoryObserver
 {
     /**
-     * Handle the category "created" event.
+     * Handle the category "creating" event.
      *
      * @param  \App\Category  $category
      * @return void
      */
-    public function created(Category $category)
+    public function creating(Category $category)
     {
-    }
-
-    /**
-     * Handle the category "updated" event.
-     *
-     * @param  \App\Category  $category
-     * @return void
-     */
-    public function updated(Category $category)
-    {
-        //
+        $category->slug = str_slug($category->title);
     }
 
     /**
@@ -39,27 +29,5 @@ class CategoryObserver
             $collection->delete();
         }
         \Storage::disk('public')->delete($category->image);
-    }
-
-    /**
-     * Handle the category "restored" event.
-     *
-     * @param  \App\Category  $category
-     * @return void
-     */
-    public function restored(Category $category)
-    {
-        //
-    }
-
-    /**
-     * Handle the category "force deleted" event.
-     *
-     * @param  \App\Category  $category
-     * @return void
-     */
-    public function forceDeleted(Category $category)
-    {
-        //
     }
 }

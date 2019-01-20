@@ -15,12 +15,6 @@ class Collection extends Model
         return $this->belongsTo(Category::class);
     }
 
-    public function setNameAttribute($value)
-    {
-        $this->attributes['name'] = $value;
-        $this->attributes['slug'] = str_slug($value);
-    }
-
     public function getUrlAttribute()
     {
         return route('categories.collections.show', [$this->category, $this]);

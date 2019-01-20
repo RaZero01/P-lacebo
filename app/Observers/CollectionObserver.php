@@ -7,24 +7,18 @@ use App\Collection;
 class CollectionObserver
 {
     /**
-     * Handle the collection "created" event.
+     * Handle the collection "creating" event.
      *
      * @param  \App\Collection  $collection
      * @return void
      */
-    public function created(Collection $collection)
+    public function creating(Collection $collection)
     {
-    }
-
-    /**
-     * Handle the collection "updated" event.
-     *
-     * @param  \App\Collection  $collection
-     * @return void
-     */
-    public function updated(Collection $collection)
-    {
-        //
+        if ($collection->name == '') {
+            $collection->slug = str_slug($collection->title);
+        } else {
+            $collection->slug = str_slug($collection->name);
+        }
     }
 
     /**
@@ -36,27 +30,5 @@ class CollectionObserver
     public function deleted(Collection $collection)
     {
         \Storage::disk('public')->delete($collection->image);
-    }
-
-    /**
-     * Handle the collection "restored" event.
-     *
-     * @param  \App\Collection  $collection
-     * @return void
-     */
-    public function restored(Collection $collection)
-    {
-        //
-    }
-
-    /**
-     * Handle the collection "force deleted" event.
-     *
-     * @param  \App\Collection  $collection
-     * @return void
-     */
-    public function forceDeleted(Collection $collection)
-    {
-        //
     }
 }

@@ -15,12 +15,6 @@ class Category extends Model
         return $this->hasMany(Collection::class);
     }
 
-    public function setTitleAttribute($value)
-    {
-        $this->attributes['title'] = $value;
-        $this->attributes['slug'] = str_slug($value);
-    }
-
     public function getUrlAttribute()
     {
         return route('categories.show', $this);
