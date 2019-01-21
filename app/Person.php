@@ -12,10 +12,10 @@ class Person extends Model
 
     public function getUrlAttribute()
     {
-        return route($this->attributes['url'], $this);
+        $route = $this->attributes['url'] == 'people.show'?  route($this->attributes['url'], $this) : route($this->attributes['url']);
+        return $route;
     }
 
-    
     public function getAboutHtmlAttribute()
     {
         return \Parsedown::instance()->text($this->about);

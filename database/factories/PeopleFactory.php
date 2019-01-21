@@ -10,7 +10,7 @@ $factory->define(App\Person::class, function (Faker $faker) {
         'position' => rtrim($faker->unique()->realText(15), "."),
         'image' => \Storage::disk('public')->putFile('avatars', new File($faker->image($dir = '/tmp', $width = 640, $height = 920, 'people'))),
         'about' => rtrim($faker->unique()->realText(1000), "."),
-        'url' => rand(0, 2) ? 'people.show' : 'empty',
+        'url' => rand(0, 2) ? 'people.show' : 'contacts',
         'external_url' => rtrim($faker->optional()->url()),
         'instagram' => rtrim($faker->optional()->url()),
         'facebook' => rtrim($faker->optional()->url()),

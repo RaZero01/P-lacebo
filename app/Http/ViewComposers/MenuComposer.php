@@ -55,7 +55,7 @@ class MenuComposer
           ],
           [
               'title' => 'Контакты',
-              'url' => 'empty'
+              'url' => 'contacts'
           ],
         ];
     }
