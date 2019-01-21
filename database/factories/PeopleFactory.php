@@ -5,12 +5,13 @@ use Illuminate\Http\File;
 
 $factory->define(App\Person::class, function (Faker $faker) {
     return [
-        'title' => rtrim($faker->unique()->realText(20), "."),
+        'title' => rtrim($faker->unique()->realText(50), "."),
         'name' => rtrim($faker->unique()->name(), "."),
         'position' => rtrim($faker->unique()->realText(15), "."),
         'image' => \Storage::disk('public')->putFile('avatars', new File($faker->image($dir = '/tmp', $width = 640, $height = 920, 'people'))),
         'about' => rtrim($faker->unique()->realText(1000), "."),
-        'url' => rtrim($faker->optional()->url()),
+        'url' => rand(0, 2) ? 'people.show' : 'empty',
+        'external_url' => rtrim($faker->optional()->url()),
         'instagram' => rtrim($faker->optional()->url()),
         'facebook' => rtrim($faker->optional()->url()),
         'email' => rtrim($faker->optional()->safeEmail),

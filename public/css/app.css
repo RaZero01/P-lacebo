@@ -16232,25 +16232,44 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
+  font-size: 10pt;
 }
 
-.footer a {
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .footer {
+    font-size: 12pt;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .footer {
+    font-size: 13pt;
+  }
+}
+
+@media (min-width: 1200px) {
+  .footer {
+    font-size: 14pt;
+  }
+}
+
+a {
   color: black;
 }
 
-.footer a:hover {
+a:hover {
   color: rgba(0, 0, 0, 0.5);
 }
 
-.footer a:visited {
+a:visited {
   color: black;
 }
 
-.footer a::-moz-selection {
+a::-moz-selection {
   color: black;
 }
 
-.footer a::selection {
+a::selection {
   color: black;
 }
 
@@ -16264,6 +16283,29 @@ body {
   min-width: 25vh;
   max-width: 50vh;
   font-size: 20pt;
+}
+
+.item-enlarge-flex:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+}
+
+.item-enlarge-flex img {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  border-width: 3px;
+  border-style: solid;
+  border-color: darkgrey;
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 100%;
+}
+
+.item-enlarge-flex img:hover {
+  border-color: darkred;
 }
 
 @media (min-width: 768px) and (max-width: 991.98px) {
@@ -16313,7 +16355,19 @@ body {
   text-decoration: none;
 }
 
-.item-enlarge-flex:hover {
+.person {
+  font-size: 12pt;
+}
+
+.person .avatar {
+  transition: 0.55s ease-in-out;
+  -webkit-transition: all 0.55s ease-in-out;
+  -moz-transition: all 0.55s ease-in-out;
+  -o-transition: all 0.55s ease-in-out;
+  -ms-transition: all 0.55s ease-in-out;
+}
+
+.person .avatar:hover {
   cursor: pointer;
   transform: scale(1.1);
   -webkit-transform: scale(1.1);
@@ -16322,7 +16376,7 @@ body {
   -ms-transform: scale(1.1);
 }
 
-.item-enlarge-flex img {
+.person .avatar img {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   border-width: 3px;
   border-style: solid;
@@ -16332,7 +16386,73 @@ body {
   width: 100%;
 }
 
-.item-enlarge-flex img:hover {
+.person .avatar img:hover {
   border-color: darkred;
+}
+
+.person .tel-mail-info {
+  transition: 0.55s ease-in-out;
+  -webkit-transition: all 0.55s ease-in-out;
+  -moz-transition: all 0.55s ease-in-out;
+  -o-transition: all 0.55s ease-in-out;
+  -ms-transition: all 0.55s ease-in-out;
+  font-size: 1.2em;
+}
+
+.person .tel-mail-info:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+}
+
+.person .social {
+  transition: 0.55s ease-in-out;
+  -webkit-transition: all 0.55s ease-in-out;
+  -moz-transition: all 0.55s ease-in-out;
+  -o-transition: all 0.55s ease-in-out;
+  -ms-transition: all 0.55s ease-in-out;
+  font-size: 1.2em;
+}
+
+.person .social:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+}
+
+.person .about {
+  font-family: "Georgia";
+  color: #000;
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .person {
+    font-size: 15pt;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .person {
+    font-size: 18pt;
+  }
+}
+
+@media (min-width: 1200px) {
+  .person {
+    font-size: 21pt;
+  }
+}
+
+.person .title {
+  font-size: 2em;
+  font-family: "FRANKLIN GOTHIC";
+  color: #000;
+  font-style: italic;
 }
 

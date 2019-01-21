@@ -24,8 +24,9 @@ class CreatePeopleTable extends Migration
             $table->string('facebook')->nullable();
             $table->string('email')->nullable();
             $table->string('phone')->nullable();
+            $table->string('url')->nullable();
             $table->text('about');
-            $table->string('url');
+            $table->string('external_url')->nullable();
             $table->timestamps();
         });
     }

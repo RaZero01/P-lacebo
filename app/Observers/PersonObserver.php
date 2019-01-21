@@ -15,10 +15,6 @@ class PersonObserver
     public function creating(Person $person)
     {
         $person->slug = str_slug($person->name);
-
-        if ($person->url == '') {
-            $person->url = route('people.show', $person);
-        }
     }
 
     /**
