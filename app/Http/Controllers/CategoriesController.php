@@ -6,7 +6,7 @@ use App\Category;
 use Illuminate\Http\Request;
 use Illuminate\Http\File;
 
-class CategoryController extends Controller
+class CategoriesController extends Controller
 {
     public function __construct()
     {

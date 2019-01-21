@@ -4,12 +4,11 @@ Route::get('/', 'HomeController')->name('home');
 
 Auth::routes();
 
-Route::resource('categories', 'CategoryController')->except(['index']);
-Route::resource('categories.collections', 'CollectionController')->except(['index']);
-Route::resource('person', 'PersonController')->except(['index', 'show']);
+Route::resource('categories', 'CategoriesController')->except(['index']);
+Route::resource('categories.collections', 'CollectionsController')->except(['index']);
+Route::resource('person', 'PeopleController')->except(['index']);
 
-Route::get('about', 'PersonController@index')->name('person.index');
-Route::get('about/{person}', 'PersonController@show')->name('person.show');
+Route::get('about', 'AboutController')->name('about');
 
 Route::get('/aaa', function () {
     return view('layouts.app');

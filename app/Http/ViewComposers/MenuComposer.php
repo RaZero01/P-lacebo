@@ -43,7 +43,7 @@ class MenuComposer
           ],
           [
               'title' => 'О компании',
-              'url' => 'person.index'
+              'url' => 'about'
           ],
           [
               'title' => 'Партнёры',

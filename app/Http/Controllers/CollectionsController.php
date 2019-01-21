@@ -6,7 +6,7 @@ use App\Category;
 use App\Collection;
 use Illuminate\Http\Request;
 
-class CollectionController extends Controller
+class CollectionsController extends Controller
 {
     public function __construct()
     {

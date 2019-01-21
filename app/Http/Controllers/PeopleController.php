@@ -5,21 +5,11 @@ namespace App\Http\Controllers;
 use App\Person;
 use Illuminate\Http\Request;
 
-class PersonController extends Controller
+class PeopleController extends Controller
 {
     public function __construct()
     {
         $this->middleware('auth', ['except' => ['index', 'show']]);
-    }
-
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        return view('persons.index', ['people' => Person::all()]);
     }
 
     /**
@@ -51,7 +41,7 @@ class PersonController extends Controller
      */
     public function show(Person $person)
     {
-        //
+        return view('people.show', compact('person'));
     }
 
     /**
