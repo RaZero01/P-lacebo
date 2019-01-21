@@ -16254,8 +16254,7 @@ body {
   color: black;
 }
 
-.category,
-.collection {
+.item-enlarge-flex {
   transition: 0.55s ease-in-out;
   -webkit-transition: all 0.55s ease-in-out;
   -moz-transition: all 0.55s ease-in-out;
@@ -16264,22 +16263,57 @@ body {
   width: 21vw;
   min-width: 25vh;
   max-width: 50vh;
+  font-size: 20pt;
 }
 
-.category *,
-.collection * {
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .item-enlarge-flex {
+    font-size: 18pt;
+    min-width: 30vh;
+    max-width: 50vh;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .item-enlarge-flex {
+    font-size: 20pt;
+    min-width: 35vh;
+    max-width: 60vh;
+  }
+}
+
+@media (min-width: 1200px) {
+  .item-enlarge-flex {
+    font-size: 24pt;
+    min-width: 35vh;
+    max-width: 60vh;
+  }
+}
+
+.item-enlarge-flex h2 {
+  padding-top: 20px;
+  margin-bottom: 10px;
+  display: block;
+  font-size: 1em;
+}
+
+.item-enlarge-flex h4 {
+  margin-top: 10px;
+  padding-bottom: 5px;
+  font-size: 0.7em;
+}
+
+.item-enlarge-flex * {
   font-family: "Paytone-one";
   color: black;
   font-weight: 800;
 }
 
-.category a,
-.collection a {
+.item-enlarge-flex a {
   text-decoration: none;
 }
 
-.category:hover,
-.collection:hover {
+.item-enlarge-flex:hover {
   cursor: pointer;
   transform: scale(1.1);
   -webkit-transform: scale(1.1);
@@ -16288,8 +16322,7 @@ body {
   -ms-transform: scale(1.1);
 }
 
-.category img,
-.collection img {
+.item-enlarge-flex img {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   border-width: 3px;
   border-style: solid;
@@ -16299,8 +16332,7 @@ body {
   width: 100%;
 }
 
-.category img:hover,
-.collection img:hover {
+.item-enlarge-flex img:hover {
   border-color: darkred;
 }
 

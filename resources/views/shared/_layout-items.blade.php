@@ -1,16 +1,16 @@
-<div class="my-2 mx-auto d-flex flex-row flex-wrap align-content-center align-items-center">
+<div class="my-2 mx-5 px-5 d-flex justify-content-around flex-column flex-md-row flex-wrap align-items-md-baseline align-items-center">
     @foreach($model as $item)
-    <div class="mx-auto py-2 px-auto collection">
+    <div class="mx-3 pt-2 item-enlarge-flex text-center flex-md-grow-0 flex-grow-1">
         <a href="{{ $item->url }}">
             @if ($item instanceof App\Person)
-            <h2 class="text-center mb-1">{{ $item->name }}</h2>
+            <h2>{{ $item->name }}</h2>
             @else
-            <h2 class="text-center mb-1">{{ $item->title }}</h2>
+            <h2>{{ $item->title }}</h2>
             @endif
-            <img class="rounded img-fluid" src="{{ asset('storage/'.$item->image) }}">
+            <img class="rounded img-fluid" src="{{ asset($item->image) }}">
 
             @if ($item instanceof App\Collection)
-            <h4 class="text-center mt-1">
+            <h4>
                 @if ($item->name == '')
                 {{ $item->title }}
                 @else
@@ -18,7 +18,7 @@
                 @endif
             </h4>
             @elseif ($item instanceof App\Person)
-            <h4 class="text-center mt-1">
+            <h4>
                 {{ $item->position }}
             </h4>
             @endif

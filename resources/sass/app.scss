@@ -117,7 +117,7 @@ body {
   }
 }
 
-.category, .collection {
+.item-enlarge-flex {
   transition: 0.55s ease-in-out;
   -webkit-transition: all .55s ease-in-out;
   -moz-transition: all .55s ease-in-out;
@@ -126,6 +126,41 @@ body {
   width: 21vw;
   min-width: 25vh;
   max-width: 50vh;
+  font-size: 20pt;
+
+  @include media-breakpoint-only(md) {
+    font-size: 18pt;
+    min-width: 30vh;
+    max-width: 50vh;
+  }
+
+
+  @include media-breakpoint-only(lg) {
+    font-size: 20pt;
+    min-width: 35vh;
+    max-width: 60vh;
+  }
+
+
+  @include media-breakpoint-only(xl) {
+    font-size: 24pt;
+    min-width: 35vh;
+    max-width: 60vh;
+  }
+
+
+  & h2 {
+    padding-top: 20px;
+    margin-bottom: 10px;
+    display: block;
+    font-size: 1em;
+  }
+
+  & h4 {
+    margin-top: 10px;
+    padding-bottom: 5px;
+    font-size: 0.7em;
+  }
 
   & * {
     font-family: "Paytone-one";
