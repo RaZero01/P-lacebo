@@ -17,7 +17,7 @@ class PersonObserver
         $person->slug = str_slug($person->name);
 
         if ($person->url == '') {
-            $person->url = route('person.show', $person);
+            $person->url = route('people.show', $person);
         }
     }
 

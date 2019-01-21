@@ -6,7 +6,7 @@ Auth::routes();
 
 Route::resource('categories', 'CategoriesController')->except(['index']);
 Route::resource('categories.collections', 'CollectionsController')->except(['index']);
-Route::resource('person', 'PeopleController')->except(['index']);
+Route::resource('people', 'PeopleController')->except(['index']);
 
 Route::get('about', 'AboutController')->name('about');
 
