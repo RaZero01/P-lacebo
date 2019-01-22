@@ -27,6 +27,7 @@ class CreatePeopleTable extends Migration
             $table->string('url')->nullable();
             $table->text('about');
             $table->string('external_url')->nullable();
+            $table->string('contacts_label')->nullable();
             $table->timestamps();
         });
     }

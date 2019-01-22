@@ -16355,8 +16355,99 @@ a::selection {
   text-decoration: none;
 }
 
+.contacts {
+  font-size: 12pt;
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .contacts {
+    font-size: 15pt;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .contacts {
+    font-size: 18pt;
+  }
+}
+
+@media (min-width: 1200px) {
+  .contacts {
+    font-size: 21pt;
+  }
+}
+
+.contacts .contact-item:not(:last-child) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.contacts .social {
+  font-size: 1.1em;
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .contacts .contact-main {
+    font-size: 1.1em;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .contacts .contact-main {
+    font-size: 0.9em;
+  }
+}
+
+@media (min-width: 1200px) {
+  .contacts .contact-main {
+    font-size: 0.8em;
+  }
+}
+
+.social {
+  transition: 0.55s ease-in-out;
+  -webkit-transition: all 0.55s ease-in-out;
+  -moz-transition: all 0.55s ease-in-out;
+  -o-transition: all 0.55s ease-in-out;
+  -ms-transition: all 0.55s ease-in-out;
+  font-size: 1.2em;
+}
+
+.social:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+}
+
+.title {
+  font-size: 2em;
+  font-family: "FRANKLIN GOTHIC";
+  color: #000;
+  font-style: italic;
+}
+
 .person {
   font-size: 12pt;
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .person {
+    font-size: 15pt;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .person {
+    font-size: 18pt;
+  }
+}
+
+@media (min-width: 1200px) {
+  .person {
+    font-size: 21pt;
+  }
 }
 
 .person .avatar {
@@ -16408,51 +16499,8 @@ a::selection {
   -ms-transform: scale(1.1);
 }
 
-.person .social {
-  transition: 0.55s ease-in-out;
-  -webkit-transition: all 0.55s ease-in-out;
-  -moz-transition: all 0.55s ease-in-out;
-  -o-transition: all 0.55s ease-in-out;
-  -ms-transition: all 0.55s ease-in-out;
-  font-size: 1.2em;
-}
-
-.person .social:hover {
-  cursor: pointer;
-  transform: scale(1.1);
-  -webkit-transform: scale(1.1);
-  -moz-transform: scale(1.1);
-  -o-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-}
-
 .person .about {
   font-family: "Georgia";
   color: #000;
-}
-
-@media (min-width: 768px) and (max-width: 991.98px) {
-  .person {
-    font-size: 15pt;
-  }
-}
-
-@media (min-width: 992px) and (max-width: 1199.98px) {
-  .person {
-    font-size: 18pt;
-  }
-}
-
-@media (min-width: 1200px) {
-  .person {
-    font-size: 21pt;
-  }
-}
-
-.person .title {
-  font-size: 2em;
-  font-family: "FRANKLIN GOTHIC";
-  color: #000;
-  font-style: italic;
 }
 

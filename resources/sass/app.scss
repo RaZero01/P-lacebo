@@ -218,30 +218,8 @@ a {
   }
 }
 
-.person {
+.contacts {
   font-size: 12pt;
-
-  & .avatar {
-    @include enlarge(1.1);
-    @include hoverable-border(rgba(0, 0, 0, 0.5), darkgrey, darkred);
-  }
-
-  & .tel-mail-info {
-    @include enlarge(1.1);
-
-    font-size: 1.2em;
-  }
-
-  & .social {
-    @include enlarge(1.1);
-
-    font-size: 1.2em;
-  }
-
-  & .about {
-    font-family: "Georgia";
-    color: $black;
-  }
 
   @include media-breakpoint-only(md) {
     font-size: 15pt;
@@ -258,10 +236,75 @@ a {
   }
 
 
-  & .title {
-    font-size: 2.0em;
-    font-family: "FRANKLIN GOTHIC";
+  & .contact-item:not(:last-child) {
+    border-bottom: 1px solid rgba($black, 0.4);
+  }
+
+  & .social {
+    font-size: 1.1em;
+  }
+
+  & .contact-main {
+    @include media-breakpoint-only(sm) {
+      font-size: 1.1em;
+    }
+
+
+    @include media-breakpoint-only(lg) {
+      font-size: 0.9em;
+    }
+
+
+    @include media-breakpoint-only(xl) {
+      font-size: 0.8em;
+    }
+  }
+}
+
+.social {
+  @include enlarge(1.1);
+
+  font-size: 1.2em;
+}
+
+.title {
+  font-size: 2.0em;
+  font-family: "FRANKLIN GOTHIC";
+  color: $black;
+  font-style: italic;
+}
+
+.person {
+  font-size: 12pt;
+
+  @include media-breakpoint-only(md) {
+    font-size: 15pt;
+  }
+
+
+  @include media-breakpoint-only(lg) {
+    font-size: 18pt;
+  }
+
+
+  @include media-breakpoint-only(xl) {
+    font-size: 21pt;
+  }
+
+
+  & .avatar {
+    @include enlarge(1.1);
+    @include hoverable-border(rgba(0, 0, 0, 0.5), darkgrey, darkred);
+  }
+
+  & .tel-mail-info {
+    @include enlarge(1.1);
+
+    font-size: 1.2em;
+  }
+
+  & .about {
+    font-family: "Georgia";
     color: $black;
-    font-style: italic;
   }
 }
