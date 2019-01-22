@@ -47,7 +47,7 @@ class MenuComposer
           ],
           [
               'title' => 'Партнёры',
-              'url' => 'empty'
+              'url' => 'partners.index'
           ],
           [
               'title' => 'События',

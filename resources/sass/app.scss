@@ -218,7 +218,7 @@ a {
   }
 }
 
-.contacts {
+.partners, .contacts, .person {
   font-size: 12pt;
 
   @include media-breakpoint-only(md) {
@@ -234,8 +234,16 @@ a {
   @include media-breakpoint-only(xl) {
     font-size: 21pt;
   }
+}
 
+.partners {
+  & .partners-bottom {
+    font-family: "Georgia";
+    color: $black;
+  }
+}
 
+.contacts {
   & .contact-item:not(:last-child) {
     border-bottom: 1px solid rgba($black, 0.4);
   }
@@ -275,23 +283,6 @@ a {
 }
 
 .person {
-  font-size: 12pt;
-
-  @include media-breakpoint-only(md) {
-    font-size: 15pt;
-  }
-
-
-  @include media-breakpoint-only(lg) {
-    font-size: 18pt;
-  }
-
-
-  @include media-breakpoint-only(xl) {
-    font-size: 21pt;
-  }
-
-
   & .avatar {
     @include enlarge(1.1);
     @include hoverable-border(rgba(0, 0, 0, 0.5), darkgrey, darkred);

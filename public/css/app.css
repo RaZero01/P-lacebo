@@ -16355,26 +16355,39 @@ a::selection {
   text-decoration: none;
 }
 
-.contacts {
+.partners,
+.contacts,
+.person {
   font-size: 12pt;
 }
 
 @media (min-width: 768px) and (max-width: 991.98px) {
-  .contacts {
+  .partners,
+  .contacts,
+  .person {
     font-size: 15pt;
   }
 }
 
 @media (min-width: 992px) and (max-width: 1199.98px) {
-  .contacts {
+  .partners,
+  .contacts,
+  .person {
     font-size: 18pt;
   }
 }
 
 @media (min-width: 1200px) {
-  .contacts {
+  .partners,
+  .contacts,
+  .person {
     font-size: 21pt;
   }
+}
+
+.partners .partners-bottom {
+  font-family: "Georgia";
+  color: #000;
 }
 
 .contacts .contact-item:not(:last-child) {
@@ -16426,28 +16439,6 @@ a::selection {
   font-family: "FRANKLIN GOTHIC";
   color: #000;
   font-style: italic;
-}
-
-.person {
-  font-size: 12pt;
-}
-
-@media (min-width: 768px) and (max-width: 991.98px) {
-  .person {
-    font-size: 15pt;
-  }
-}
-
-@media (min-width: 992px) and (max-width: 1199.98px) {
-  .person {
-    font-size: 18pt;
-  }
-}
-
-@media (min-width: 1200px) {
-  .person {
-    font-size: 21pt;
-  }
 }
 
 .person .avatar {

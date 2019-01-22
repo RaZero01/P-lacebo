@@ -3,7 +3,7 @@
 @section('pageTitle', $person->name. ' - ' . $person->position)
 
 @section('content')
-<div class="mx-2 mx-md-5 media">
+<div class="mx-2 mx-md-5 mb-3 media">
     <div class="person col">
         @include('shared._page-title', ['title' => $person->title])
 

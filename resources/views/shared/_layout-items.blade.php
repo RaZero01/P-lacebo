@@ -21,6 +21,10 @@
             <h4>
                 {{ $item->position }}
             </h4>
+            @elseif ($item instanceof App\Partner)
+            <h4>
+                {{ $item->name }}
+            </h4>
             @endif
         </a>
     </div>
