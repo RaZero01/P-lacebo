@@ -5,7 +5,6 @@ namespace App\Providers;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use App\Category;
-use App\Collection;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -25,6 +24,10 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        Route::bind('category', function ($slug) {
+            return Category::with(['collections.category', 'collections'])->where('slug', $slug)->first() ?? abort(404);
+        });
+
         parent::boot();
     }
 

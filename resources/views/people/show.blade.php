@@ -9,9 +9,9 @@
 
         <div class="row media-body justify-content-center justify-content-md-left mt-3 px-1">
             <div class="col-md col-lg-4 col-sm-5 col-6 col-md-5 col-xl-3 avatar">
-                {!! $person->external_url != Request::url() ? "<a href=\"" . $person->external_url . "\">" : '' !!}
+                {!! $person->external_url != '' ? "<a href=\"" . $person->external_url . "\">" : '' !!}
                     <img src="{{ asset($person->image) }}" class="rounded img-fluid">
-                    {!! $person->external_url != Request::url() ? "</a>" : '' !!}
+                    {!! $person->external_url != '' ? "</a>" : '' !!}
             </div>
 
             <div class="col-md align-self-center">
