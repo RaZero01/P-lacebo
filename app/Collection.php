@@ -15,6 +15,11 @@ class Collection extends Model
         return $this->belongsTo(Category::class);
     }
 
+    public function items()
+    {
+        return $this->hasMany(CollectionItem::class);
+    }
+
     public function getUrlAttribute()
     {
         return route('categories.collections.show', [$this->category, $this]);

@@ -29,6 +29,10 @@ class CollectionObserver
      */
     public function deleted(Collection $collection)
     {
+        foreach ($collection->items as $item) {
+            $item->delete();
+        }
+
         \Storage::disk('public')->delete($collection->image);
     }
 }
