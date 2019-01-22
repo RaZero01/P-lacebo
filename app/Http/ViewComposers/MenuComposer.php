@@ -51,7 +51,7 @@ class MenuComposer
           ],
           [
               'title' => 'События',
-              'url' => 'empty'
+              'url' => 'events.index'
           ],
           [
               'title' => 'Контакты',
