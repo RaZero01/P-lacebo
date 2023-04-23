@@ -6,7 +6,7 @@
   "license": "ISC",
   "repository": "git@github.com:RaZero01/P-lacebo.git",
   "devDependencies": {
-    "browser-sync": "^2.23.6",
+    "browser-sync": "^2.29.1",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.1.0",
     "gulp-imagemin": "^4.1.0",
